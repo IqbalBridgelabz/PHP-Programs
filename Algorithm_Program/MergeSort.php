@@ -1,6 +1,6 @@
 <?php
-    require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
-    require ("Utility2.php");
+    //require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+    require ("Utility.php");
     function merge_arrays($left_arr, $right_arr){
 	$res = array();
 	while (count($left_arr) > 0 && count($right_arr) > 0){
@@ -38,5 +38,5 @@
     $str3 = explode(" ",$str1);
     //$arr = Utility2::stringSearch($str3);
     //$sorted_numbers = mergesort($arr);
-    $sorted_numbers = Utility2::stringSearch($str3);
+    $sorted_numbers = Utility::stringSearch($str3);
     echo $sorted_numbers;

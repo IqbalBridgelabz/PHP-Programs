@@ -2,10 +2,10 @@
 /**
  * To find Square root
  */
-require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
-require ("Utility2.php");
+//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+require ("Utility.php");
  echo "Enter value of C: ";
  $c = Utility::getInt();
- $sqrt =  Utility2::squareRoot($c);
+ $sqrt =  Utility::squareRoot($c);
  echo "Square Root of ".$c." is ".$sqrt."\n";
 ?>

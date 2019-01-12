@@ -1,5 +1,38 @@
 <?php
-class Utility2{
+class Utility{
+
+
+
+
+/**
+ * Binary search logic
+ */
+public static function binarySearch($arr, $x) 
+{ 
+    // check for empty array 
+    if (count($arr) == 0) return false; 
+    $low = 0; 
+    $high = count($arr) - 1; 
+    while ($low <= $high) { 
+        // compute middle index 
+        $mid = (floor($low + $high) / 2); 
+        // element found at mid 
+        if($arr[$mid] == $x) { 
+            return true; 
+        } 
+        if ($x < $arr[$mid]) { 
+            // search the left side of the array 
+            $high = $mid -1; 
+        } 
+        else { 
+            // search the right side of the array 
+            $low = $mid + 1; 
+        } 
+    } 
+    // If we reach here element x doesnt exist 
+    return false; 
+} 
+
 /**
  * Temperature Conversion
  */
@@ -40,8 +73,8 @@ public static function printArray(&$arr, $n)
 { 
     for ($i = 0; $i < $n; $i++) {
 		echo $arr[$i]." "; 
-        //echo "\n"; 
     }
+    echo "\n";
 } 
 
 //squre root functio
@@ -331,5 +364,26 @@ public static function monthlyPayment($y,$r,$p){
     $payment = ($p * $R) / (1 - pow((1+$R),-$n));
     echo "Monthly Payment ".$payment."\n";
 }
+
+// Day of Week
+public static function dayOfWeek($d , $m , $y){
+    $y0 = floor($y - (14 - $m) / 12) +1 ;
+    $x = floor($y0 + $y0/4 - $y0/100 + $y0/400);
+    $m0 = ($m + 12 * floor(((14 - $m) / 12)) - 2);
+    $d0 = floor(($d + $x + floor((31*$m0) / 12)) % 7) ;
+    return $d0;
+    }
+
+//To get int array
+// static function getIntArr(){
+//     echo "enter array size : ";
+//     $size = Utility::getInt();
+//     $arr = [];
+//     echo "enter array value : ";
+//     for($i = 0 ; $i < $size ; $i++ ){
+//         $arr[$i] = trim(fgets(STDIN)); 
+//     }
+//     return $arr ;
+// }
 }
 ?>

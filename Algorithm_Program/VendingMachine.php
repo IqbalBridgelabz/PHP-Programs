@@ -1,6 +1,6 @@
  <?php
 require "/home/admin1/iqbal/Functional_Programs/Utility.php";
-require "Utility2.php";
+require "Utility.php";
 
 static $total = 0;
 function calculate($i ,$money, $notes,&$total)
@@ -25,7 +25,7 @@ function calculate($i ,$money, $notes,&$total)
 
 static $notes = array(1000, 500 , 100 , 50 , 10 , 5 , 2 , 1 );
 echo "Enter amount ";
-$money = Utility2::getInt();
+$money = Utility::getInt();
 calculate(0 ,$money, $notes,$total);
 echo "Total Number of Notes are : " . $total."\n";
 ?>

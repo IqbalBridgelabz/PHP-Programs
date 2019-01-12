@@ -1,7 +1,7 @@
 <?php
     //To check Anagram or not
-    require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
-    require ("/iqbal/Functional_Programs/Utility.php");
+    //require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+    require ("Utility.php");
     echo "Enter first string: ";
     $str  = Utility::getString();
     echo "Enter second string: ";

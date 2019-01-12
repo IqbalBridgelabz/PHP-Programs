@@ -1,7 +1,7 @@
 <?php 
 /**  Bubble sort program for word search */
-require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
-require ("Utility2.php");
+//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+require ("Utility.php");
 
 // Read data from file
 

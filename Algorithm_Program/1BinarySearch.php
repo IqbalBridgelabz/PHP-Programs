@@ -2,7 +2,8 @@
 /**
  * Binary search program for integer
  */
-require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+require ("Utility.php");
 function binarySearch( &$arr, $x) 
 { 
     // check for empty array 

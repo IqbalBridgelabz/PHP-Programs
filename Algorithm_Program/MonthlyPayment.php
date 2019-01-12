@@ -2,8 +2,8 @@
 /**
  * Program to calculate monthly payment 
  */
-require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
-require ("Utility2.php");
+//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+require ("Utility.php");
 echo "Enter year :";
 $y = Utility::getInt();
 echo "Enter Amount : ";

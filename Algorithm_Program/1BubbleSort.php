@@ -1,6 +1,7 @@
 <?php
-require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
 // PHP program for implementation of Bubble Sort 
+require("Utility.php");
 $arr = Utility::getIntArr();
 $len = count($arr); 
 $arr = Utility::bubbleSort($arr); 

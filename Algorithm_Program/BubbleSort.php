@@ -1,6 +1,8 @@
 <?php 
-require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
-require ("Utility2.php");
+/**
+ * bubble sort 
+ */
+require ("Utility.php");
 $arr1 = file_get_contents("Integer.txt");
 $arr2 = explode(" ",$arr1);
 $len = count($arr2);
