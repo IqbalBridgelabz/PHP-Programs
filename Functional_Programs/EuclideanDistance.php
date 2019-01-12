@@ -1,4 +1,7 @@
 <?php
+/**
+ * Euclidean distance progrma
+ */
 require ("Utility.php");
 echo "Enter first Value : ";
 $first = Utility::getInt();

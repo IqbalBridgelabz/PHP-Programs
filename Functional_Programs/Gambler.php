@@ -1,4 +1,7 @@
 <?php
+/**
+ * Gamble Problem
+ */
 require ("Utility.php");
 echo "Enter Stake value: ";
 $stake = Utility::getInt();
@@ -7,6 +10,4 @@ $goal= Utility::getInt();
 echo "Enter trials value: ";
 $trials= Utility::getInt();
 Utility::gambler($stake,$goal,$trials);
-
-
 ?>

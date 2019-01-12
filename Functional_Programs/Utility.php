@@ -1,6 +1,12 @@
 <?php 
 class Utility{
-
+    // to find power of two of given number upto N.
+    public static function power($num){
+        for($i = 1;$i<=$num;$i++){
+            $pow = pow(2,$i);
+            echo "Power of Number is: ".$pow."\n";
+        }
+    }
 
     /**
      * @stopWatch program
@@ -168,7 +174,7 @@ class Utility{
     $perHeads = ($heads*100)/$val;
     $perTails = ($tails*100)/$val;
     echo "Tails % is ".$perTails."\n";
-    echo "Heads % is ".$perHeads;
+    echo "Heads % is ".$perHeads."\n";
     }
 
     // To find prime factor of a given number
@@ -477,7 +483,6 @@ public static function is_anagram($string_1, $string_2)
  public static function bubbleSort(&$arr) 
 { 
 	$n = sizeof($arr); 
-
 	// Traverse through all array elements 
 	for($i = 0; $i < $n; $i++) 
 	{ 

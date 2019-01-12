@@ -1,4 +1,7 @@
 <?php
+/**
+ * Quadratic equation program
+ */
 require ("Utility.php");
 echo " Enter the Value of A: ";
 $a = Utility::getInt();

@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Harmonic number program
+ */
 require "Utility.php";
 echo "Enter  num:";
 $N = Utility::getInt();
@@ -10,7 +12,6 @@ for ($i = 1; $i <= $N; $i++) {
     } else {
         echo "1/$i" . ' + ';
     }
-
     $var = 1 / $i;
     $harmonicNum = $harmonicNum + $var;
 }

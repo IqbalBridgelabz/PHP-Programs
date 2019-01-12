@@ -1,4 +1,7 @@
 <?php
+/**
+ * Write a program WindChill.java that takes two double command-line arguments t and v and prints the wind chill.
+ */
 require ("Utility.php");
 echo " Enter Temperature Value: ";
 $t = Utility::getFloat();
