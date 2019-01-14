@@ -1,6 +1,6 @@
 <?php
 /**
- * Quadratic equation program
+ * Write a program Quadratic.java to find the roots of the equation a*x*x + b*x + c. Since the equation is x*x, hence there are 2 roots.
  */
 require ("Utility.php");
 echo " Enter the Value of A: ";

@@ -1,6 +1,6 @@
 <?php
 /**
- * To find No.of heads and tails
+ * Flip Coin and print percentage of Heads and Tails
  */
 require ("Utility.php");
 echo "enter the val : " ;

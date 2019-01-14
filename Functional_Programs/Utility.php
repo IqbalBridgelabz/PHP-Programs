@@ -526,10 +526,9 @@ public static function couponNumber($n){
         //no of time coupon generated
         echo "count =>".$count."\n";
         //unique coupon
-        foreach ($arr as $print) {
-            echo $print."\n";
+        foreach($arr as $print) {
+            echo $print."\n";  
         }
-    
 }
 
 }

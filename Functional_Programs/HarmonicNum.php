@@ -1,6 +1,6 @@
 <?php
 /**
- * Harmonic number program
+ * Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N 
  */
 require "Utility.php";
 echo "Enter  num:";

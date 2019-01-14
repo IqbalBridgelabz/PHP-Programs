@@ -1,42 +1,42 @@
 <?php
-    //require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
-    require ("Utility.php");
-    function merge_arrays($left_arr, $right_arr){
+// Merge sort program
+require ("Utility.php");
+// Utility::merge_sort($my_array);
+// Utility::merge($left,$right);
+function merge_sort($my_array){
+	if(count($my_array) == 1 ) return $my_array;
+	$mid = count($my_array) / 2;
+    $left = array_slice($my_array, 0, $mid);
+    $right = array_slice($my_array, $mid);
+	$left = merge_sort($left);
+	$right = merge_sort($right);
+	return merge($left, $right);
+}
+function merge($left, $right){
 	$res = array();
-	while (count($left_arr) > 0 && count($right_arr) > 0){
-		if($left_arr[0] > $right_arr[0]){
-			$res[] = $right_arr[0];
-			$right_arr = array_slice($right_arr , 1);
+	while (count($left) > 0 && count($right) > 0){
+		if($left[0] > $right[0]){
+			$res[] = $right[0];
+			$right = array_slice($right , 1);
 		}else{
-			$res[] = $left_arr[0];
-			$left_arr = array_slice($left_arr, 1);
+			$res[] = $left[0];
+			$left = array_slice($left, 1);
 		}
 	}
-	while (count($left_arr) > 0){
-		$res[] = $left_arr[0];
-		$left_arr = array_slice($left_arr, 1);
+	while (count($left) > 0){
+		$res[] = $left[0];
+		$left = array_slice($left, 1);
 	}
-	while (count($right_arr) > 0){
-		$res[] = $right_arr[0];
-		$right_arr = array_slice($right_arr, 1);
+	while (count($right) > 0){
+		$res[] = $right[0];
+		$right = array_slice($right, 1);
 	}
 	return $res;
 }
-
-
-    function mergesort($array)
-    {
-    if(count($array) == 1 ) return $array;
-	$mid = count($array) / 2;
-    $left_arr = array_slice($array, 0, $mid);
-    $right_arr = array_slice($array, $mid);
-    $left_arr = mergesort($left_arr);
-	$right_arr = mergesort($right_arr);
-	return merge_arrays($left_arr, $right_arr);
-    }
-    $str1 = file_get_contents("String.txt");
-    $str3 = explode(" ",$str1);
-    //$arr = Utility2::stringSearch($str3);
-    //$sorted_numbers = mergesort($arr);
-    $sorted_numbers = Utility::stringSearch($str3);
-    echo $sorted_numbers;
+//$test_array = array(100, 54, 7, 2, 5, 4, 1);
+$arr = Utility::getIntArr();
+echo "Original Array : ";
+echo implode(', ',$arr );
+echo "\nSorted   Array : ";
+echo implode(', ',merge_sort($arr))."\n";
+?>

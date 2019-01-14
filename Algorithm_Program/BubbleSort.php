@@ -1,6 +1,6 @@
 <?php 
 /**
- * bubble sort 
+ *  Reads in integers prints them in sorted order using Bubble Sort
  */
 require ("Utility.php");
 $arr1 = file_get_contents("Integer.txt");

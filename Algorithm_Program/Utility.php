@@ -1,9 +1,57 @@
 <?php
 class Utility{
 
-
-
-
+//Calculate number of notes
+public static function calculate($i ,$money, $notes,&$total)
+{
+$rem = 0;
+if ($money == 0) {
+    return ;
+} else {
+    if ($money >= $notes[$i]) {
+        // logic for Calculating The notes
+        $calNotes = (int)($money / $notes[$i]);
+        $rem = $money % $notes[$i];
+        $money = $rem;
+        $total += $calNotes;
+        echo $notes[$i] . " Notes -----> " . $calNotes." \n";
+    }
+    $i++;
+    return Utility::calculate($i ,$money, $notes,$total);
+}
+}
+    // merge loging
+    public static function merge($left, $right){
+        $res = array();
+        while (count($left) > 0 && count($right) > 0){
+            if($left[0] > $right[0]){
+                $res[] = $right[0];
+                $right = array_slice($right , 1);
+            }else{
+                $res[] = $left[0];
+                $left = array_slice($left, 1);
+            }
+        }
+        while (count($left) > 0){
+            $res[] = $left[0];
+            $left = array_slice($left, 1);
+        }
+        while (count($right) > 0){
+            $res[] = $right[0];
+            $right = array_slice($right, 1);
+        }
+        return $res;
+    }
+// merge sort 
+public static function merge_sort($my_array){
+if(count($my_array) == 1 ) return $my_array;
+$mid = count($my_array) / 2;
+$left = array_slice($my_array, 0, $mid);
+$right = array_slice($my_array, $mid);
+$left = merge_sort($left);
+$right = merge_sort($right);
+return merge($left, $right);
+}
 /**
  * Binary search logic
  */
@@ -109,7 +157,8 @@ public static function is_anagram($string_1, $string_2)
             }
              if($count==2)
 	         {
-		        echo $i." is a prime Number\n";
+                 return $i;
+		        //echo $i." is a prime Number\n";
 		     }
         }
     }
@@ -374,16 +423,5 @@ public static function dayOfWeek($d , $m , $y){
     return $d0;
     }
 
-//To get int array
-// static function getIntArr(){
-//     echo "enter array size : ";
-//     $size = Utility::getInt();
-//     $arr = [];
-//     echo "enter array value : ";
-//     for($i = 0 ; $i < $size ; $i++ ){
-//         $arr[$i] = trim(fgets(STDIN)); 
-//     }
-//     return $arr ;
-// }
 }
 ?>

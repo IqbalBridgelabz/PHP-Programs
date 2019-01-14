@@ -4,7 +4,8 @@
 require ("Utility.php");
 echo "Enter the value : ";
 $num = Utility::getInt();
-Utility::IsPrime($num);
+$prime = Utility::IsPrime($num);
+echo $prime;
 ?>
  
   

@@ -1,6 +1,6 @@
 <?php 
 /**
- * program to find Elapsed Time
+ * Write a Stopwatch Program for measuring the time that elapses between the start and end clicks
  */
 require ("Utility.php");
 $start  = round(microtime(true)*1000);

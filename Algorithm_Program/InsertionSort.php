@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Reads in strings from standard input and prints them in sorted order.
+ */
 //require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
 require ("Utility.php");
 $arr1 = file_get_contents("String.txt");
