@@ -1,6 +1,5 @@
 <?php
 class Utility{
-
 //Calculate number of notes
 public static function calculate($i ,$money, $notes,&$total)
 {
