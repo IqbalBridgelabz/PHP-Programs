@@ -1,6 +1,5 @@
 <?php
     require("Utility.php");
-    require_once "Node.php";
     class Stack
     {
         //to hold 1st value of stack

@@ -3,7 +3,7 @@
     * Purpose: balanceParentheses is to check the parentheses of the arithmetic expression
     * is balance or not with the help of stack
     */
-    require("stack.php");
+    require("Stack.php");
     //object of stack
     $st = new Stack();
     //take arithmetic expression from user and split it into array

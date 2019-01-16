@@ -209,9 +209,10 @@ class Utility{
                 else{
                     $cash=$cash-1;
                 }  
-                if($cash==$goal){
-                    $win++;
-                }
+                
+            }
+            if($cash==$goal){
+                $win++;
             }
              
         }

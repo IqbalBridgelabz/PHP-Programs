@@ -1,5 +1,31 @@
 <?php
 class Utility{
+//Function to check for integer Palindrome 
+public static function Palindrome($number){   
+    $temp = $number;   
+    $new = 0;   
+    while (floor($temp)) {   
+        $d = $temp % 10;   
+        $new = $new * 10 + $d;   
+        $temp = $temp/10;   
+    }   
+    if ($new == $number){   
+        return 1;   
+    } 
+    else{ 
+        return 0; 
+    } 
+}   
+// Function to check for string Palindrome 
+public static function stringPalindrome($string){   
+    if (strrev($string) == $string){   
+        return 1;   
+    } 
+    else{ 
+        return 0; 
+    } 
+}  
+  
 //To reverse String
 public static function revSting($str){
     return strrev($str);

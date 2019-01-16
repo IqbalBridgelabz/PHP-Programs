@@ -5,9 +5,9 @@ require ("Utility.php");
 
 // Read data from file
 
-$str1 = file_get_contents("Integer.txt");
+$str1 = file_get_contents("String.txt");
 $str3 = explode(" ",$str1);
-Utility2::stringSearch($str3);
+Utility::stringSearch($str3);
 
 
 /**

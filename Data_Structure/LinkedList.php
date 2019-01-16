@@ -1,53 +1,46 @@
+
 <?php
 require_once "Node.php";
 require "Utility.php";
-/**
- * UnOrderedList is to perform action on linked list
- * like search add remove show
- */
-class UnOrderedList
-{
-    //to hold 1st value of linked list
+class LinkedList{
     public $head = null;
-    //to hold last value of linked list
-    public $tail = null;
-    //to count no of node in linked list
     public $count = 0;
-    //to add element in linked list
-    public function add($data)
-    {
-        //n is object of Node class
-        $n = new Node($data);
-        // if condition to enter 1st value in the linked list
-        // if head is null then it will make 1st value as head and and next will aslo
-        // point the 1st value at that time
-        // and next of node will be null
-        if ($this->head == null) {
-            $this->head = $n;
-            $this->tail = $this->head;
-            $n->next = null;
-            $this->count++;
-            return;
+    public function insert($data){
+        $node = new Node($data);
+        $node->next = null;
+        if($this->head == null){
+            $this->head = $node;
         }
-        //if head is not null then all value will add in the tail and that value change to tail
-        //and break the method
-        $this->tail->next = $n;
-        $this->tail = $n;
-        $this->count++;
-        return;
-    }
-    //to show all data of linked list
-    public function show()
-    {
-        //temp to hold the head value so that main head value will not change
-        $temp = $this->head;
-        //for loop to display all data
-        for ($i = 0; $i < $this->count; $i++) {
-            echo $temp->data . "\n";
-            $temp = $temp->next;
+        else{
+            $n = $this->head;
+            while($n->next != null){
+                $n = $n->next;
+            }
+            $n->next = $node;
         }
     }
-    //To remove element from linked list
+    public function show(){
+        $node = $this->head;
+        while($node->next!=null){
+            echo $node->data." ";
+            $node = $node->next;
+        }
+        echo $node->data."\n";
+    }
+    // public function delete($index){
+    //     if($index==0){
+    //         $this->head = $this->head->next;
+    //     }
+    //     else{
+    //         $n = $this->head;
+    //         $n1 = null;
+    //         for($i=0;$i<$index-1;$i++){
+    //             $n = $n->next;
+    //         }
+    //         $n1 = $n->next;
+    //         $n->next = $n1->next;
+    //     }
+    // }
     public function remove($data)
     {
         //check the linked list have data of not
@@ -96,7 +89,6 @@ class UnOrderedList
         $this->count--;
         return;
     }
-    //To search a element
     public function search($data)
     {
         //temp to hold head node
@@ -111,42 +103,26 @@ class UnOrderedList
         }
         return false;
     }
-    public function getStr()
-    {
-        $temp = $this->head;
-        $str = "";
-        for ($i = 0; $i < $this->count; $i++) {
-            $str = $str . $temp->data . " ";
-            $temp = $temp->next;
-        }
-
-        $str = substr($str, 0, -1);
-        return $str;
-    }
 }
-$ls = new UnOrderedList();
-// $ls->add("a");
-// $ls->add("b");
-// $ls->add("c");
-// $ls->add("d");
+$ll = new LinkedList();
 $arr = (file_get_contents("text.txt"));
 $arr1 = explode(" ",$arr);
 $n = count($arr1);
 for($i=0; $i<$n;$i++){
-    $ls->add($arr1[$i]);
+    $ll->insert($arr1[$i]);
 }
-
-echo $ls->getStr() . "\n";
+$ll->show()."\n";
 echo "enter value to search: ";
 $val = Utility::getString();
-if ($ls->search($val)) {
+if ($ll->search($val)) {
     echo "Found \n";
-    $ls->remove($val);
+    $ll->remove($val);
     //$ls->show();
-    echo $ls->getStr() . "\n";
+    $ll->show()."\n";
 } else {
     echo "Not Found \n";
-    $ls->add($val);
+    $ll->insert($val);
     //$ls->show();
-    echo $ls->getStr() . "\n";
+    $ll->show()."\n";
 }
+

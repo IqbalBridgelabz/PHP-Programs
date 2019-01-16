@@ -54,12 +54,12 @@ return merge($left, $right);
 /**
  * Binary search logic
  */
-public static function binarySearch($arr, $x) 
+public static function binarySearch(&$arr, $x) 
 { 
     // check for empty array 
     if (count($arr) == 0) return false; 
     $low = 0; 
-    $high = count($arr) - 1; 
+    $high = count($arr); 
     while ($low <= $high) { 
         // compute middle index 
         $mid = (floor($low + $high) / 2); 

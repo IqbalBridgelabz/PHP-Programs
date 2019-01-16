@@ -30,13 +30,13 @@ function binarySearch( &$arr, $x)
     return false; 
 } 
 $arr = Utility::getIntArr();
-$start  = round(microtime(true)*1000);
+//$start  = round(microtime(true)*1000);
 echo "enter search element : ";
 $search = Utility::getInt(); 
 if(binarySearch($arr, $search) == true) { 
     echo $search." Exists in given array: \n"; 
-    $stop = round(microtime(true)*1000);
-    echo " Elapsed time =>".Utility::stopWatch($start,$stop);
+    //$stop = round(microtime(true)*1000);
+    //echo " Elapsed time =>".Utility::stopWatch($start,$stop);
 } 
 else { 
     echo $search." Doesnt Exist"; 
