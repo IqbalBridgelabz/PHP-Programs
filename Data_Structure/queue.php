@@ -1,92 +1,92 @@
+
 <?php
-class Item
-{
-	public $data = null;
-	public $next = null;
-	public $prev = null;
- 
-	public function __construct($data)
-	{
-		$this->data = $data;
-	}
-}
- 
-class Queue
-{
-	protected $_head = null;
-	protected $_tail = null;
- 
-	public function insert($data)
-	{
-		$item = new Item($data);
- 
-		if ($this->_head == NULL) {
-			$this->_head = $item;
-		} else if ($this->_tail == NULL) {
-			$this->_tail = $item;
-			$this->_head->next = $this->_tail;
-			$this->_tail->prev = $this->_head;
-		} else {
-			$this->_tail->next = $item;
-			$item->prev = $this->_tail;
-			$this->_tail = $item;
-		}
-	}
- 
-	public function delete()
-	{
-		if (isset($this->_head->data)) {
- 
-			$temp = $this->_tail;
-			$data = $temp->data;
- 
-			$this->_tail = $this->_tail->prev;
- 
-			if (isset($this->_tail->next))
-				$this->_tail->next = null;
-			else 
-				$this->_tail = $this->_head = null;
- 
-			return $data;
-		}
- 
-		return FALSE;
-	}
- 
-	public function __toString()
-	{
-		$output = '';
-		$t = $this->_head;
-		while ($t) {
-			$output .= $t->data . ' --> ';
-			$t = $t->next;
-		}
- 
-		return $output;
-	}
-}
- 
- 
-$q = new Queue();
- 
-$q->insert(1);
-$q->insert(2);
-$q->insert(3);
- 
-// 1 2 3
-//echo $q;
- 
-$q->delete();
-//$q->delete();
- 
-// 1
-//echo $q;
- 
-$q->insert(15);
-$q->insert('hello');
-$q->insert('world');
-$q->delete();
- 
-// 1 15 "hello"
-echo $q;
+    
+    require("UnOrderedList.php");
+    class Queue
+    {
+        //to hold 1st value of queue
+        public $head = null;
+        //to hold last value of queue
+        public $tail = null;
+        //to count no of node in queue
+        public $count = 0;
+        /**
+         * function enqueue is to add data in the queue
+         * 
+         * @param data $data hold the data which we want to add in the queue
+         */
+        public function enqueue($data)
+        {
+            //n is object of Node class
+            $n = new Node($data);
+            // if condition to enter 1st value in the queue 
+            // if head is null then it will make 1st value as head and and tail will aslo 
+            // point the 1st value at that time 
+            // and next of node will be null 
+            if ($this->head == null) 
+            {
+                $this->head = $n;
+                $this->tail = $this->head;
+                $n->next = null;
+                $this->count++;
+                return;
+            }
+            //if head is not null the all value will add in the tail and that value change to tail
+            //and break the method 
+            $this->tail->next = $n;
+            $this->tail = $n;
+            $this->count++;
+            return;
+        }
+        /**
+         * function dequeu is to remove element from the straing of the queue
+         * 
+         * @return $temp which hold starting value 
+         */
+        public function dequeue()
+        {
+            if ($this->head == null) {
+                return;
+            }
+            $temp = $this->head;
+            if ($this->head == $this->tail) {
+                $this->head = null;
+                $this->tail = null;
+                $this->count--;
+                return $temp->data;
+            }
+            $this->head = $this->head->next;
+            $this->count--;
+            return $temp->data;
+        }
+        /**
+         * function show is to print list
+         */
+        public function show()
+        {
+            //temp to hold the head value so that main head value will not change 
+            $temp = $this->head;
+            //for loop to display all data
+            for ($i=0; $i < $this->count; $i++) 
+            { 
+                echo $temp->data."\n";
+                $temp = $temp->next;
+            }
+        }
+        public function size()
+        {
+            return $this->count;
+        }
+        public function isEmpty()
+        {
+            return $this->count == 0;
+        }
+    }
+    // $q = new Queue();
+    // $q->enqueue(7);
+    // $q->enqueue(5);
+    // $q->enqueue(5);
+    // $q->enqueue(5);
+    // $q->enqueue(5);
+    // $q->show();
 ?>
