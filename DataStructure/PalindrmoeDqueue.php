@@ -14,7 +14,7 @@ function isPallindrome()
     //creating new dequeue
     $deq = new Dequeue();
     //taking user input to search
-    echo "Enter a string to check for pallindrome ";
+    echo "Enter a string to check for pallindrome : ";
     $str = Utility::getString();
     //adding string characters to the dequeue
     for ($i = 0; $i < strlen($str); $i++) {

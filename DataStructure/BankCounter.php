@@ -29,23 +29,23 @@ $counter = function () {
         //initializing a queue to store the data
     $q = new Queue();
         //taking user input
-    echo "Enter total people in queue ";
+    echo "Enter total people in queue : ";
     $people = Utility::getInt();
         //looping to get input in queue and checking for correct input
     for ($i = 0; $i < $people; $i++) {
-        echo "Enter 1 to deposit or 2 to withdraw ";
+        echo "Enter 1 to deposit or 2 to withdraw : ";
         $n = Utility::getInt();
             //if else condition to check for correct input
         if ($n === 1) {
-            echo "Enter amount ";
+            echo "Enter amount : ";
             $amount = Utility::getInt();
             $q->enqueue($amount);
         } else if ($n === 2) {
-            echo "Enter amount ";
+            echo "Enter amount : ";
             $amount = Utility::getInt();
             $q->enqueue($amount * -1);
         } else {
-            echo "enter correct input";
+            echo "enter correct input : ";
             $i--;
         }
     }
@@ -67,7 +67,7 @@ $counter = function () {
     echo "\nBank Counter Status : \n";
     echo "Total Deposits : " . $deps[1] . "\n";
     echo "Total Deposited Amount = " . (int)$deps[0] . "\n";
-    echo "Total Wihdrawals : " . $withd[1] . "\n";
+    echo "Total Wihdrawals : = " . $withd[1] . "\n";
     echo "Total Withdrawed Amount = " . ((int)$withd[0] * -1) . "\n";
 };
 //calling counter function

@@ -7,23 +7,23 @@ require("Utility.php");
 function calender()
 {
     //Taking Month And Year
-    echo "Enter Month ";
+    echo "Enter Month : ";
     $month = Utility::getInt();
     //validating
     while ($month > 12) {
-        echo "enter correct month ";
+        echo "enter correct month : ";
         $month = Utility::getInt();
     }
-    echo "Enter Year ";
+    echo "Enter Year : ";
     $year = Utility::getInt();
     //validating
     while ($year < 1000) {
-        echo "enter correct year ";
+        echo "enter correct year : ";
         $year = Utility::getInt();
     }
     //initializing 2D aray
     $cal = initArray();
-    //Calculating the staarting day of the month
+    //Calculating the starting day of the month
     $start = Utility::dayOfWeek(1, $month, $year);
     //Calculating the ending day of the month
     $end = calculateEnd($month, $year);
