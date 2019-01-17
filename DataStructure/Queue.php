@@ -22,14 +22,14 @@ class Queue
      */
     function enqueue($item)
     {
-        $this->list->add($item);
+        $this->list->append($item);
     }
     /**
      * Function to remove the item from the start of the list
      */
     function dequeue()
     {
-        return $this->list->remove(0);
+        return $this->list->popPos(0);
     }
     /**
      * Function to check if the queue is empty or not

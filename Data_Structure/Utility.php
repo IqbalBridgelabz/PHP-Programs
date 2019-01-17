@@ -1,5 +1,97 @@
 <?php
 class Utility{
+//To get int array
+static function getIntArr(){
+    echo "enter array size : ";
+    $size = Utility::getInt();
+    $arr = [];
+    echo "enter array value : ";
+    for($i = 0 ; $i < $size ; $i++ ){
+        $arr[$i] = trim(fgets(STDIN)); 
+    }
+    return $arr ;
+}
+//2D array for integer
+function twoDArrayForInteger()
+{
+    echo "enter row size"."\n";
+    $m = Utility::getInt();
+    echo "enter colums size"."\n";
+    $n = Utility::getInt();
+    $arr = array();
+    echo "enter valus"."\n";
+    for($i = 0;$i < $m; $i++)
+    {
+        $iArr = array();
+        for($j = 0; $j < $n ;$j++ )
+        {
+            $iArr[$j] = trim(fgets(STDIN));
+        } 
+        array_push($arr,$iArr);
+    }
+    for($i = 0;$i < $m; $i++)
+    {
+        for($j = 0; $j < $n ;$j++ )
+        {
+            $prime = Utility::IsPrime($arr[$i][$j]);
+            //echo $arr[$i][$j]." ";
+        }
+        echo "\n";
+    }
+}
+
+ // To find PrimeNumber---------------------------------------------
+ public static function IsPrime($n)
+ {
+     for($i=2; $i<$n; $i++)
+     {
+         $count = 0;
+         for($j=1;$j<=$i;$j++){
+             if($i % $j==0){
+             $count++;
+             }
+         }
+          if($count==2)
+          {
+              return $i;
+             //echo $i." is a prime Number\n";
+          }
+     }
+ }
+
+
+    //print day
+    public static function printDay($d,$m,$y)
+    {
+        
+        $y0 = $y - (int)((14 - $m) / 12);
+        $x = $y0 + (int)($y0/4) - (int)($y0/100) + (int)($y0/400);
+        $m0 = $m + 12 * (int)((14 - $m) / 12) - 2;
+        $d0 = ($d + $x + (int)((31*$m0) / 12)) % 7;
+        return $d0;
+    }
+
+
+// leap year
+public static function leapYear($yr) {
+    $num = $yr;
+    $numLength = strlen((string)$num);
+    if($numLength==4){
+        if(($yr%400==0)|| ($yr%4==0) && ($yr%100!=0)){
+            echo " ".$yr." is leap year\n\n";
+        }
+        else{
+        echo " ".$yr." is not leap year\n\n";
+        }
+    }
+    else{
+        echo "Enter Valid Year:\n";
+        $year=Utility::getInt();
+        Utility::leapYear($year);
+    }
+}
+
+
 //Function to check for integer Palindrome 
 public static function Palindrome($number){   
     $temp = $number;   
@@ -66,8 +158,12 @@ public static function revSting($str){
      return $val;
      
  }
-
-
+// read file
+ public static function readFl($file)
+ {
+     $fileC = fopen($file,"r") or die("unable to open");
+     return fread($fileC, filesize($file));
+ }
 
  //To get Float Value
  public static function getFloat(){
@@ -98,17 +194,17 @@ public static function revSting($str){
      return (int)$val;
      }
  }
- //To get int array
- static function getIntArr(){
-    echo "enter array size : ";
-    $size = Utility::getInt();
-    $arr = [];
-    echo "enter array value : ";
-    for($i = 0 ; $i < $size ; $i++ ){
-        $arr[$i] = trim(fgets(STDIN)); 
-    }
-    return $arr ;
-}
+//  //To get int array
+//  static function getIntArr(){
+//     echo "enter array size : ";
+//     $size = Utility::getInt();
+//     $arr = [];
+//     echo "enter array value : ";
+//     for($i = 0 ; $i < $size ; $i++ ){
+//         $arr[$i] = trim(fgets(STDIN)); 
+//     }
+//     return $arr ;
+// }
 
 
 //Two dimensional Array
@@ -141,34 +237,7 @@ public static function twoDArray()
 
 
 
-// 2D array for integer
 
-public static function twoDArrayForInteger()
-{
-    echo "enter row size"."\n";
-    $m = Utility::getInt();
-    echo "enter colums size"."\n";
-    $n = Utility::getInt();
-    $arr = array();
-    echo "enter valus"."\n";
-    for($i = 0;$i < $m; $i++)
-    {
-        $iArr = array();
-        for($j = 0; $j < $n ;$j++ )
-        {
-            $iArr[$j] = trim(fgets(STDIN));
-        } 
-        array_push($arr,$iArr);
-    }
-    for($i = 0;$i < $m; $i++)
-    {
-        for($j = 0; $j < $n ;$j++ )
-        {
-            echo $arr[$i][$j]." ";
-        }
-        echo "\n";
-    }
-}
 
 
 // 2D array for double

@@ -1,6 +1,6 @@
 <?php
     
-    require "Utility.php";
+    require("Utility.php");
     require_once("Node.php");
     class OrderedList
     {
@@ -11,11 +11,7 @@
         //to count no of node in OrderedList
         public $count = 0;
         
-        /**
-         * function add is to add element in the ordered linked list 
-         * 
-         * @param  $data data which we want to add
-         */
+       
         public function add($data)
         {
             //object of node
@@ -55,12 +51,6 @@
             return;
         }
         
-        /**
-         * function search is to find data in list 
-         * 
-         * @param $sdata element which we want to search
-         * @return boolean 
-         */
         public function search($data)
         {
             //temp to hold head node
@@ -75,11 +65,7 @@
             }
             return false;
         }
-        /**
-         * function pop is to pop data from the list and return the data 
-         * 
-         * @return $temp which hold the data 
-         */
+       
         public function pop()
         {
             //if no data present 
@@ -198,27 +184,5 @@
             return $str;
         }
     }
-
-$os = new OrderedList();
-$arr = (file_get_contents("text.txt"));
-$arr1 = explode(" ",$arr);
-$n = count($arr1);
-for($i=0; $i<$n;$i++){
-    $os->add($arr1[$i]);
-}
-echo $os->getStr() . "\n";
-
-echo "enter value to search: ";
-$val = Utility::getString();
-if ($os->search($val)) {
-    echo "Found \n";
-    $os->pop($val);
-    //$ls->show();
-    echo $os->getStr() . "\n";
-} else {
-    echo "Not Found \n";
-    $os->add($val);
-    //$ls->show();
-    echo $os->getStr() . "\n";
-}
+    
 ?>

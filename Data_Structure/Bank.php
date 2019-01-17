@@ -7,7 +7,6 @@
     $bankCash = 100000;
     /**
      * function to enter people in the queue
-     *  @param $num it take number of people in the queue
      */
     function name($num)
     {   

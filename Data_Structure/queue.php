@@ -82,11 +82,11 @@
             return $this->count == 0;
         }
     }
-    // $q = new Queue();
-    // $q->enqueue(7);
-    // $q->enqueue(5);
-    // $q->enqueue(5);
-    // $q->enqueue(5);
-    // $q->enqueue(5);
-    // $q->show();
+    $q = new Queue();
+    $q->enqueue(7);
+    $q->enqueue(5);
+    $q->enqueue(5);
+    $q->enqueue(5);
+    $q->enqueue(5);
+    $q->show();
 ?>

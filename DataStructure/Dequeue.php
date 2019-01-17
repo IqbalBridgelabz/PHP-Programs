@@ -1,14 +1,14 @@
 <?php
 /**
- * Custiom daata structure queue with its popular method implemented on linked list
+ * data structure queue implementation in  linked list
  */
-require_once("UnOrderedList.php");
-class Queue
+require("UnOrderedList.php");
+class Dequeue
 {
     /**
      * list to store the element and implement linked list
      */
-    public $list;
+    private $list;
     /**
      * Constructor function to initialize the list 
      */
@@ -20,16 +20,31 @@ class Queue
      * function to push data at the end of the queue
      * @param item the item to be pushed
      */
-    function enqueue($item)
+    function addRear($item)
+    {
+        $this->list->append($item);
+    }
+    /**
+     * function to push data at the start of the queue
+     * @param item the item to be pushed
+     */
+    function addFront($item)
     {
         $this->list->add($item);
     }
     /**
      * Function to remove the item from the start of the list
      */
-    function dequeue()
+    function removeFront()
     {
-        return $this->list->remove(0);
+        return $this->list->popPos(0);
+    }
+    /**
+     * Function to remove the item from the end of the list
+     */
+    function removeRear()
+    {
+        return $this->list->popPos($this->size() - 1);
     }
     /**
      * Function to check if the queue is empty or not
