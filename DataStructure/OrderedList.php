@@ -13,14 +13,14 @@ class OrderedList
      */
     function __toString()
     {
-        $s = "{ ";
+        $s = "";
         $node = $this->head;
         while ($node != null) {
-            $s .= $node->data . ",";
+            $s .= $node->data . " ";
             $node = $node->next;
         }
         $s = substr($s, 0, -1);
-        return $s . " }";
+        return $s;
     }
     /**
      * function to get the elements of list as string
@@ -58,11 +58,13 @@ class OrderedList
         if ($this->isEmpty()) {
             echo "list empty ";
             return;
-        } else if ($this->head->data == $data) {
+        } 
+        else if ($this->head->data == $data) {
             $this->head = $this->head->next;
             $this->size--;
             return;
-        } else {
+        } 
+        else {
             $node = $this->head;
             $prev;
             while ($node->data !== $data) {

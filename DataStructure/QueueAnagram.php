@@ -41,7 +41,7 @@ function getprime($range)
     //variacle to set index
     $count = 0;
     for ($i = 2; $i < $range; $i++) {
-        if (Utility::isprime($i)) {
+        if (Utility::primeNumber($i)) {
             $prime[$count++] = $i;
         }
     }

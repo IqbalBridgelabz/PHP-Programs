@@ -1,78 +1,94 @@
 <?php
-    require "Utility.php";
-    require("OrderedList.php");
-    //array with null value size of 11
-    $arr = array_fill(0,11,null);
-    
-    /** 
-     * functon add is to get value and add in the hash map
-     * 
-     * @param $data data which we get from the file 
-     */
-    function add($data)
-    {
-        global $arr;
-        //get index where we want to hold the data
-        $index = $data%11;
-        //if index is null the it will save the object of the ordered linked list 
-        if ($arr[$index]==null) {
-            $arr[$index] = new OrderedList();
-            //and add the data 
-            $arr[$index]->add($data);
-            return;
-        }
-        // if not null then is will add data in the sorted way
-        $arr[$index]->add($data);
+/**
+ * set top level error handler function to handle in case of error occurence
+ * 
+ */
+set_error_handler(function ($errno, $errstr, $error_file, $error_line) {
+    echo "!!!!Error Occured!!!!!!!\n";
+    echo "Error: [$errno] $errstr - $error_file:$error_line \n";
+    echo "Terminating!!!!!!!!!\n";
+    die();
+});
+/**
+ * Create a Slot of 10 to store Chain of Numbers that belong to each Slot to efficiently search a 
+ * number from a given set of number
+ */
+ //require function from the file below to work
+require("Utility.php");
+require("OrderedList.php");
+/**
+ * Function calculate the hash value of the function
+ * @param Integer the value which to find the hash value
+ * @return hash the hash index of the number
+ */
+// function hashv($value)
+// {
+//     return $value % 10;
+// }
+/**
+ * function to initialize the list array 
+ * @return Array the array containg 10 list objects
+ */
+//$ol = new OrderedList();
+function initList()
+{
+    $arr = [];
+    for ($i = 0; $i < 10; $i++) {
+        $arr[] = new OrderedList();
     }
-    /**
-     * function search is to find data is present in the list of not if yes then it
-     * will remove and if no then is will add data in the list 
-     * 
-     * @param $data which user want to search 
-     */
-    function search($data){
-        global $arr;
-        //loction of data index 
-        $location = $data%11;
-        // search is ture then is will remove data 
-        if ($arr[$location]->search($data)) {
-            echo "data is remove\n";
-            $arr[$location]->remove($data);
-            $s = "";
-            for ($i=0; $i < sizeof($arr); $i++) { 
-                $s .= $arr[$i]->getStr()." ";
-            }
-            $s = substr($s,0,-1);
-            Utility::writeFl($s,"text.txt");
-        } 
-        //it will add data
-        else {
-            echo "data is added\n";
-            $arr[$location]->add($data);
-            $filec = fopen("text.txt","a+") or die("unable to open");
-            fwrite($filec," ".$data);
-        }
-        
+    return $arr;
+}
+/**
+ * Function to  run the program and perform hashing and print output to the user
+ */
+function hashing()
+{
+    $list = initList();
+    $numbers = explode(" ", Utility::readFile("number.txt"));
+    // /print_r($numbers);
+    for ($i = 0; $i < count($numbers); $i++) {
+        $l = (int)$numbers[$i] % 10;
+        $list[$l]->add((int)$numbers[$i]);
     }
-    
-    //save the value from the file into the array 
-    $sArr = explode(" ",Utility::readFile("text.txt"));
-    //store value in the hash map one by one 
-    for ($i=0; $i < sizeof($sArr); $i++) { 
-        add((int)$sArr[$i]);
-    }
-    //show all the value of list
-    for ($i=0; $i < sizeof($arr); $i++) { 
-        echo $arr[$i]->getInt()."\n";
-    }
-    //ask use to search the number 
-    echo "enter number to search\n";
+    //print_r($list);
+    echo "list : " . showList($list);;
+    echo "Enter no to search\n";
+    //getting the no from the user to search
     $num = Utility::getInt();
-    //call search function
-    search($num);
-    //show all the value of list
-    for ($i=0; $i < sizeof($arr); $i++) { 
-        echo $arr[$i]->getInt()."\n";
+    $l = (int)$num % 10;
+    //checks if the no enteres by user is in the list or not 
+    if ($list[$l]->search($num)) {
+        echo "Number found\nRemoving......\n";
+        $list[$l]->remove($num);
+    } else {
+        echo "Number Not Found\nAdding......\n";
+        $list[$l]->add($num);
     }
-    
+    writeFile($list);
+}
+/**
+ * Function to write string in to a file 
+ */
+function writeFile($list)
+{
+    $file = fopen("number.txt", "w") or die("Unable to open file ");
+    fwrite($file, showList($list));
+    fclose($file);
+}
+/**
+ * function to show the contents of the list as string 
+ * 
+ * @param List the list which has values
+ * @return String the value of thenlist as a string
+ */
+function showList($list)
+{
+    $s = "";
+    for ($i = 0; $i < count($list); $i++) {
+        $s .= $list[$i]->getString() . " ";
+    }
+    return substr($s , 0 ,-2)."\n";
+}
+//calling the method
+hashing();
 ?>

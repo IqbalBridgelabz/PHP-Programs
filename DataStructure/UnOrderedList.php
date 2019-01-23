@@ -13,14 +13,14 @@ class UnOrderedList
      */
     function __toString()
     {
-        $s = "{ ";
+        $s = "";
         $node = $this->head;
         while ($node != null) {
-            $s .= $node->data . ",";
+            $s .= $node->data . " ";
             $node = $node->next;
         }
         $s = substr($s, 0, -1);
-        return $s . " }";
+        return $s;
     }
     function getString()
     {
@@ -116,7 +116,7 @@ class UnOrderedList
         //temp to hold head node
         $temp = $this->head;
         //for loop to check data one by one
-        for ($i = 0; $i < $this->count; $i++) {
+        for ($i = 0; $i < $this->size; $i++) {
             //if temp data is equal to data in it will return true
             if ($temp->data === $data) {
                 return true;
@@ -127,7 +127,6 @@ class UnOrderedList
     }
     /**
      * Function to add the data at the start of linked list
-     * 
      * @param data the data to be added
      */
     function add($data)

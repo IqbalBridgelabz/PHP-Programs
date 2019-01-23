@@ -42,7 +42,7 @@ function calender()
  */
 function calculateEnd($month, $year)
 {
-    if ($month < 8) {
+    if ($month < 12) {
         if ($month % 2 == 0) {
             if ($month == 2) {
                 if (Utility::isLeapYear($year)) {
@@ -51,21 +51,18 @@ function calculateEnd($month, $year)
                 return 28;
             }
             return 30;
-        } else {
+        } else 
+        {
             return 31;
         }
-    } else {
-        if ($month % 2 == 0) {
-            return 31;
-        }
-        return 30;
-    }
+    } //else {
+    //     if ($month % 2 == 0) {
+    //         return 31;
+    //     }
+    //     return 30;
+    
 }
-/**
- * Function to print the 2d array as a calender
- * 
- * @param Array2D A 2d array containing calender
- */
+
 function printCal($arr)
 {
     echo "Sun   Mon   Tue   Wed   Thu   Fri   Sat\n";

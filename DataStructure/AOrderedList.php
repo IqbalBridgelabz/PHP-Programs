@@ -11,7 +11,7 @@ class AOrderedList
     function search()
     {
         //name of the file
-        $fname = "text.txt";
+        $fname = "number.txt";
         //reading file
         $contents = Utility::readFile($fname);
         echo $contents;
@@ -20,11 +20,11 @@ class AOrderedList
         $list = new OrderedList();
         //adding in the list
         for ($i = 0; $i < count($contents); $i++) {
-            $list->add((int)$contents[$i]);
+            $list->add($contents[$i]);
         }
-        echo "\ncontents in the list are :\n" . $list;
+        echo "\nContents in the list are :\n" . $list;
         $file = fopen($fname, "w") or die("Unable to open file ");
-        echo "\nenter to search in the list : ";
+        echo "\nEnter to search in the list : ";
         $element = Utility::getInt();
         //searching in the list
         if ($list->search($element) === true) {

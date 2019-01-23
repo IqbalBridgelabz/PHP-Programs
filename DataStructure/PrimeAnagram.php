@@ -1,84 +1,33 @@
 <?php
-
-//require function in the php file to work 
-require("Utility.php");
-/**
- * Function to get the prime numbers from 0 o range 
- * 
- * @param range the range till which to find the prime numbers
- * @return array array of prime numbers
- */
-function getprime($range)
-{
-    //array to store prime no
-    $prime = [];
-    //variacle to set index
-    $count = 0;
-    for ($i = 2; $i < $range; $i++) {
-        if (Utility::isprime($i)) {
-            $prime[$count++] = $i;
-        }
-    }
-    return $prime;
-}
-/**
- * function to get the index to store number in specified place
- */
-function getIndex($numb)
-{
-    $num = $numb;
-    if ($num < 100) {
-        return 0;
-    }
-    while ($num > 9) {
-        $num = floor($num / 10);
-    }
-    return $num;
-}
-/**
- * Function to run and test the other functions in the file
- */
-function primeRun()
-{
-    $primeArr = getPrime(1000);
-    $anagram = [];
-    $nonAnagram = [];
-    for ($i = 0; $i < count($primeArr); $i++) {
-        for ($j = 0; $j < count($primeArr); $j++) {
-            if ($i != $j) {
-                if ($b = Utility::isAnagram($primeArr[$i], $primeArr[$j])) {
-                    array_push($anagram, $primeArr[$i]);
-                    break;
-                }
+    
+    require("Utility.php");
+    //get prime number 0 to 1000
+    $arr = Utility::primeNumber();
+    $arr2D = array();
+    $index = 0;
+    $n = 100;
+    //array 0 to 10 because 10 line neened in between 0 to 1000
+    for ($i=0; $i < 10; $i++) { 
+        //array to push the value
+        $iArr = array();
+        //array to save the value in inner array
+        for ($j=0; $j < 100; $j++) { 
+            //if index reach size of array then break or when the value of index 
+            //elemnet is greater then $n value break 
+            if ($index == sizeof($arr) || $arr[$index]>$n ) {
+                break;
             }
+            $iArr[$j] = $arr[$index++];
         }
-        if (!$b) {
-            array_push($nonAnagram, $primeArr[$i]);
-        }
+        //after every loop increase by 100
+        $n += 100;
+        array_push($arr2D,$iArr);
     }
-    //@d array to store the values 
-    $array2d = [];
-    //pushing two arrays in the 2d arrays
-    array_push($array2d, $anagram);
-    array_push($array2d, $nonAnagram);
-    echo "2D array stored is : ";
-    print2d($array2d);
-    echo "\n";
-}
-function print2d($arr)
-{
-    for ($i = 0; $i < count($arr); $i++) {
-        if ($i == 1) {
-            echo "\n\nNon-Anagrams";
-        } else {
-            echo "Anagrams ; \n";
+    // print all anagram of 2d array
+    for ($i=0; $i < sizeof($arr2D); $i++) { 
+        for ($j=0; $j < sizeof($arr2D[$i]); $j++) { 
+            echo $arr2D[$i][$j]." ";
         }
         echo "\n";
-        for ($j = 0; $j < count($arr[$i]); $j++) {
-            echo $arr[$i][$j] . ",";
-        }
     }
-}
-//calling the method
-primeRun();
 ?>

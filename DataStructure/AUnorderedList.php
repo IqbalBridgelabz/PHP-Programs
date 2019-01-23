@@ -22,19 +22,19 @@ class AUnorderedList
             $list->append($contents[$i]);
         }
         //showing the list
-        echo "contents in the list are \n" . $list;
+        echo "Contents in the list are :\n" . $list;
         $file = fopen($filen, "w") or die("Unable to open file ");
-        echo "\nenter to search in the list ";
+        echo "\nEnter to search in the list : ";
         $element = Utility::getString();
         //searching the elemnt in the list
         if ($list->search($element) === true) {
-            echo "Element found \n removing element \n";
+            echo "Element found: \n Removing element: \n";
             $list->remove($element);
             echo $list;
         } else {
             echo "Element not found \n Adding element \n";
             $list->append($element);
-            echo $list;
+            echo $list."\n";
         }
         //writing back to the file
         fwrite($file, $list->getString());

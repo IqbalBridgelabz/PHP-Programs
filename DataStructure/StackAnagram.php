@@ -1,7 +1,7 @@
 <?php
 //require functions to below files to run
 require("Utility.php");
-srequire("Stack.php");
+require("Stack.php");
 /**
  * Function to run the Program and test
  */

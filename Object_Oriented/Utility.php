@@ -5,6 +5,13 @@
  */
 class Utility
 {
+
+
+    //string array
+    public static function getArrayString(){
+        return trim(fgets(STDIN));
+    } 
+   
 // to check prime number
   public static function primeNumber()
         {

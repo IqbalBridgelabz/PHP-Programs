@@ -16,6 +16,8 @@ function isPallindrome()
     //taking user input to search
     echo "Enter a string to check for pallindrome : ";
     $str = Utility::getString();
+
+    
     //adding string characters to the dequeue
     for ($i = 0; $i < strlen($str); $i++) {
         $deq->addRear($str[$i]);
@@ -23,15 +25,15 @@ function isPallindrome()
     //checking if pallindrome
     for ($i = 0; $i < strlen($str) / 2; $i++) {
         /**
-         * removing from front and back and chacking simultaneously is they are same or not
+         * removing from front and back and checking simultaneously is they are same or not
          */
         $f = $deq->removeFront();
         $r = $deq->removeRear();
         if ($f != $r) {
-            echo "\nNot Pallindrome";
+            echo $str." is not Pallindrome: \n";
             return false;
         }
-        echo "\nIs Pallindrome";
+        echo $str." is Pallindrome: \n";
         return true;
     }
 }

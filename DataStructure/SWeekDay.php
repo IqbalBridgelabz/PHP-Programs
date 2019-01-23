@@ -23,16 +23,16 @@ function calStack()
 {
     $stack = new Stack();
     //taking input with validation
-    echo "Enter Month ";
+    echo "Enter Month : ";
     $month = Utility::getInt();
     while ($month > 12) {
-        echo "enter correct month ";
+        echo "Enter correct month : ";
         $month = Utility::getInt();
     }
     echo "Enter Year ";
     $year = Utility::getInt();
     while ($year < 1000) {
-        echo "enter correct year ";
+        echo "Enter correct year : ";
         $year = Utility::getInt();
     }
     $totalDays = calTotal($month, $year);
@@ -50,7 +50,7 @@ function calStack()
         //incrementing start for next day
         $start++;
     }
-    echo $stack->size() . "\n";
+    //echo $stack->size() . "\n";
     $stack2 = new Stack();
     while (!$stack->isEmpty()) {
         $stack2->push($stack->pop());
@@ -81,7 +81,7 @@ function printCalStack($stack)
  */
 function calTotal($month, $year)
 {
-    if ($month < 8) {
+    if ($month < 13) {
         if ($month % 2 == 0) {
             if ($month == 2) {
                 if (Utility::isLeapYear($year)) {
@@ -93,12 +93,12 @@ function calTotal($month, $year)
         } else {
             return 31;
         }
-    } else {
-        if ($month % 2 == 0) {
-            return 31;
-        }
-        return 30;
-    }
+     } //else {
+    //     if ($month % 2 == 0) {
+    //         return 31;
+    //     }
+    //     return 30;
+    
 }
 /**
  * calling the function to test

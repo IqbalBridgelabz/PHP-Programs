@@ -27,25 +27,26 @@ function calQueue()
 {
     $que = new Queue();
     //taking input with validation
-    echo "Enter Month ";
+    echo "Enter Month : ";
     $month = Utility::getInt();
     while ($month > 12) {
-        echo "enter correct month ";
+        echo "Enter correct month : ";
         $month = Utility::getInt();
     }
-    echo "Enter Year ";
+    echo "Enter Year : ";
     $year = Utility::getInt();
     while ($year < 1000) {
-        echo "enter correct year ";
+        echo "Enter correct year : ";
         $year = Utility::getInt();
     }
+
     $totalDays = calTotal($month, $year);
     $start = Utility::dayOfWeek(1, $month, $year);
-    $count = 1;
+    $count =1;
     $days = explode(" ", "Sun   Mon   Tue   Wed   Thu   Fri   Sat");
-    for ($i = 0; $i <= $start; $i++) {
-        $que->enqueue(new WeekDay($days[$i], " "));
-    }
+    // for ($i = 0; $i <= $start; $i++) {
+    //     $que->enqueue(new WeekDay($days[$i], " "));
+    // }
     for ($i = 0; $i < $totalDays; $i++) {
         $que->enqueue(new WeekDay($days[$start % 7], $count++));
         $start++;
@@ -69,30 +70,37 @@ function printCalQ($que)
             echo "\n";
         }
     }
+    echo "\n";
 }
 /**
  * Function to calculate the total days in a month
  */
 function calTotal($month, $year)
 {
-    if ($month < 8) {
+    if ($month < 13) {
         if ($month % 2 == 0) {
             if ($month == 2) {
                 if (Utility::isLeapYear($year)) {
                     return 29;
+                    echo "\n";
                 }
                 return 28;
+                echo "\n";
             }
             return 30;
+            echo "\n";
         } else {
             return 31;
+            echo "\n";
         }
-    } else {
-        if ($month % 2 == 0) {
-            return 31;
-        }
-        return 30;
-    }
+    // } else {
+    //     if ($month % 2 == 0) {
+    //         return 31;
+    //         echo "\n";
+    //     }
+    //     return 30;
+    //     echo "\n";
+     }
 }
 /**
  * calling the function to test
