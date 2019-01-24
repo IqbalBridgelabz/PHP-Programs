@@ -5,7 +5,29 @@
  */
 class Utility
 {
-
+    /**
+     * 2D String Array
+     */
+    public static function TwoDStrintArray(){
+        echo "Enter Row Size : ";
+        $r = Utility::getInt();
+        echo "Enter Column Size : ";
+        $c = Utility::getInt();
+        $arr = [];
+        for($i=0; $i<$r; $i++){
+            $iArr = [];
+            for($j=0; $j<$c; $j++){
+                $iArr[$j] = Utility::getString();
+            }
+            array_push($arr,$iArr);
+        }
+        for($i=0; $i<$r; $i++){
+            for($j=0; $j<$c; $j++){
+                echo mt_rand(0,(int)$arr[$i][$j])." ";
+            }
+            echo "\n";
+        }
+    }
 
     //string array
     public static function getArrayString(){
