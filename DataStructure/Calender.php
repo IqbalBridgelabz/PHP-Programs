@@ -55,11 +55,7 @@ function calculateEnd($month, $year)
         {
             return 31;
         }
-    } //else {
-    //     if ($month % 2 == 0) {
-    //         return 31;
-    //     }
-    //     return 30;
+    } 
     
 }
 

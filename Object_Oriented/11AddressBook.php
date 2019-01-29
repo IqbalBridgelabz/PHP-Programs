@@ -52,7 +52,7 @@ function remove($fName, $lName)
             Utility::writeFl(json_encode($addressBook), "addressBook.json");
             echo "Address deleted:\n";
             return;
-        }
+    }
         $i++;
     }
     echo "No data found to delete\n";
@@ -76,9 +76,10 @@ function sortAd($n)
             //after while loop get position of temp varible 
             $addressBook[$k + 1] = $temp;
             
-        }   
-        show($addressBook);
-    } elseif ($n == 1) {
+       }   
+       show($addressBook);
+    } 
+    elseif ($n == 1) {
         for ($i = 1; $i < sizeof($addressBook); $i++) {
             //save the value of array index into temp
             $temp = $addressBook[$i];
@@ -91,11 +92,11 @@ function sortAd($n)
                 $k--;
             }
             //after while loop get position of temp varible 
-            $addressBook[$k + 1] = $temp;
-            
+            $addressBook[$k + 1] = $temp;    
         }
         show($addressBook);
-    }else {
+    }
+    else {
         echo "Invalid Input\n";
         main();
     }

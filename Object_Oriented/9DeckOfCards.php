@@ -2,13 +2,13 @@
 require("Utility.php");
 function dealing()
 {
-    $rank = array(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
+    $rank = array("2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace");
     $suit = array("Clubs", "Diamonds", "Hearts", "Spades");
     $check = array();
     $i = 0;
     $j = 0;
     $player = array(array(), array(), array(), array());
-    while (sizeof($check) != 36) {
+    while (sizeof($check) != 52) {
         $a = random_int(0, 3);
         $b = random_int(0, 12);
         $temp = ($rank[$b] . " " . $suit[$a]);

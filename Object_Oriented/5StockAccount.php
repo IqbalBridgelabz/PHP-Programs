@@ -28,9 +28,9 @@ function valueOf()
 function buy($amount, $symbol)
 {
     //get share file data into array
-    $arr = json_decode(file_get_contents("stockAccountShareFile.json"), true);
+    $arr = json_decode(file_get_contents("5StockAccountShareFile.json"), true);
     //get user acount data into array
-    $stockAcount = json_decode(file_get_contents("stockAcount.json"), true);
+    $stockAcount = json_decode(file_get_contents("5StockAcount.json"), true);
     //detail we want to store into user account
     $stock = array("ShareName" => "", "symbol" => "", "shareNumber" => 0, "totalPrice" => 0, "date" => "", "time" => "");
     $b = false;
@@ -108,7 +108,7 @@ function save($file)
 {
     echo "press\n1. save data in file\n <<else any number>>\n";
     if (Utility::getInt() == 1) {
-        Utility::writeFl(json_encode($file), "stockAcount.json");
+        Utility::writeFl(json_encode($file), "5StockAcount.json");
         echo "data saved\n";
     }
 }
@@ -116,7 +116,7 @@ function save($file)
 function printReport()
 {
     //get user acount data into array
-    $stockAcount = json_decode(Utility::readFl("stockAcount.json"), true);
+    $stockAcount = json_decode(Utility::readFl("5StockAcount.json"), true);
     echo "stockName  stockUnit totalPrice date       time\n";
     foreach ($stockAcount as $key) {
         echo sprintf("%-11s%-10u%-11u%-11s%-11s", $key['ShareName'], $key['shareNumber'], $key['totalPrice'], $key['date'], $key['time']) . "\n";
@@ -145,15 +145,15 @@ function main()
 {
     $n = 1;
     while ($n != 5) {
-        echo "press\n1. total value\n2. buy share\n3. sell share\n4. print report\n5. exit\n";
+        echo "Press:\n1. Total value:\n2. Buy share:\n3. Sell share:\n4. Print report:\n5. Exit:\n";
         $n = Utility::getInt();
         switch ($n) {
             case 1:
                 echo valueOf() . "\n";
                 break;
             case 2:
-            //get share file data into array
-                $arr = json_decode(file_get_contents("stockAccountShareFile.json"), true);
+                //get share file data into array
+                $arr = json_decode(file_get_contents("5StockAccountShareFile.json"), true);
                 echo "<stocks>  <symbol>\n";
                 foreach ($arr['list'] as $key) {
                     echo sprintf("%-11s%-6s", $key['ShareName'], $key['symbol']) . "\n";
@@ -182,5 +182,5 @@ function main()
         }
     }
 }
-//main();
+main();
 ?>

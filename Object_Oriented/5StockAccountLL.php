@@ -1,8 +1,5 @@
 <?php
-
 require_once("5StockAccount.php");
-
-
 function add()
 {
     $arr = json_decode(file_get_contents("5StockAccountShareFile.json"), true);
