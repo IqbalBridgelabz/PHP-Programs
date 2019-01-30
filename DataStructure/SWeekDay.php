@@ -1,13 +1,11 @@
 <?php
 
- //require functions and classes in below files to works
+ /** require functions and classes in below files to works */
 require("Utility.php");
 require("Stack.php");
 class WeekDay
 {
-    /**
-     * Constructor for class WeekDay
-     */
+    /** Constructor for class WeekDay */
     function __construct($day, $date)
     {
         $this->date = $date;
@@ -39,10 +37,10 @@ function calStack()
     //checking the day at which month start and storin it in var start
     $start = Utility::dayOfWeek(1, $month, $year);
     $count = 1;
-    $days = explode(" ", "Sun   Mon   Tue   Wed   Thu   Fri   Sat");
+    $days = explode(" ","Sun   Mon   Tue   Wed   Thu   Fri   Sat");
     //storing blank
     for ($i = 0; $i <= $start; $i++) {
-        $stack->push(new WeekDay($days[$i], " "));
+        $stack->push(new WeekDay($days[$i]," "));
     }
     //storing proper days from $var start
     for ($i = 0; $i < $totalDays; $i++) {

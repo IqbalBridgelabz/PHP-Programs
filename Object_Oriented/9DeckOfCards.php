@@ -19,7 +19,6 @@ function dealing()
         //echo $u."<<<".$i." ".$j."\n" ;
             $player[$i++][$j] = array($rank[$b], $suit[$a]);
             array_push($check, $temp);
-
         }
         if ($i == 4) {
             $j++;

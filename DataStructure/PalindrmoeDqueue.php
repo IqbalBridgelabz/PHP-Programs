@@ -2,7 +2,6 @@
 /**
  * construct an algorithm to input a string of characters and check whether it is a palindrome using Dequeue
  */
- //require function in the below file to work !!!!dont remove!!!!!!
 require("Utility.php");
 /**
  * Function to check if a string is pallindrome or not using dequeue

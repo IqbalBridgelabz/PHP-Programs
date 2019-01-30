@@ -79,10 +79,6 @@ function printCal($arr)
 }
 /**
  * Function to initialize the array with values of calender
- * @param start starting day of the month
- * @param arr the array 2d
- * @param end the no of days in the month
- * @return arr the array containing calender
  */
 function arrayFill($start, $arr, $end)
 {

@@ -7,34 +7,34 @@ class Utility
 {
 // to check prime number
   public static function primeNumber()
-        {
-            $arr = array();
-            $index = 0;
+    {
+        $arr = array();
+        $index = 0;
+        /*
+        * for loop initialize from 2 because 0 and 1 are not prime number
+        */
+        for ($i = 2; $i < 1000; $i++) {
             /*
-            * for loop initialize from 2 because 0 and 1 are not prime number
+            * for loop to check that number is divisible by any other number or not if it
+            * is divisible by any other number then loop will break and return false
             */
-            for ($i = 2; $i < 1000; $i++) {
-                /*
-                * for loop to check that number is divisible by any other number or not if it
-                * is divisible by any other number then loop will break and return false
-                */
-                $b = true;
-                for ($j = 2; $j <= $i / 2; $j++) {
-                    if ($i % $j == 0) {
-                        $b = false;
-                        break;
-                    }
+            $b = true;
+            for ($j = 2; $j <= $i / 2; $j++) {
+                if ($i % $j == 0) {
+                    $b = false;
+                    break;
                 }
-                /*
-                * if number is divisible by only one and itself the it will add to ArrayList
-                */
-                if ($b == true) {
-                    $arr[$index++] = (string)$i;
-                    //echo $i."\n";
-                }
-            }  
-            return $arr; 
-        }
+            }
+            /*
+            * if number is divisible by only one and itself the it will add to ArrayList
+            */
+            if ($b == true) {
+                $arr[$index++] = (string)$i;
+                //echo $i."\n";
+            }
+        }  
+        return $arr; 
+    }
     /**
      * Method to print heads ands and tails by taking input for no of times
      * @param times the no of times to flip the coin
