@@ -24,23 +24,23 @@ class Singleton
     //function to get instance of the class by lazy initilization
     public function gInstance()
     {
-        /**isset to check if the instance is already initialized ot not null 
+        /**isset to check if the instance is already initialized to not null 
          * if its null then its going to initialize it or else its going to  
          */
         if (!isset(self::$instance)) {
-            //echo "helo\n\n\n\n\n";
-            //class variable to get the class name 
-            $c = __class__;
+            
+            $c = __class__;   //class variable to get the class name 
             self::$instance = new $c;
-              //  var_dump(self::$instance);
+              
         }
         return self::$instance;
     }
 
-    //function to test initialization 
+    /**
+     * function to test initialization 
+     */
     function hello()
     {
-        //prints echo to the screen
         echo "\nhello";
     }
 }
@@ -83,16 +83,12 @@ function createInstanceWithoutConstructor(String $class)
         }
     }
     $serealized .= "}";
-    //echo $serealized;
     //returning the unserialized object from serialized string
     return unserialize($serealized);
 }
 
-
-//echo serialize($newInst);
-$oldinst = Singleton::gInstance();
-//to check the object from the reflection method
-echo "getting instance of singleton via method and checking it whith print_r \n";
+$oldinst = Singleton::gInstance();  //to check the object from the reflection method
+echo "Getting Instance of singleton via method and checking it whith print_r \n";
 print_r($oldinst);
 echo "calling method of sigleton class hello using singleton instance\n";
 $oldinst->hello();

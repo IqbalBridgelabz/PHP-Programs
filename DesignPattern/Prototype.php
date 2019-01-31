@@ -29,7 +29,7 @@ class Item
     function __constructor($name)
     {
         $this->name = $name;
-        $sub = new SubItem();
+        $sub = new Item();
     }
 
     /**
@@ -41,23 +41,8 @@ class Item
         $this->sub = clone $this->sub ;
     }
 }
-
-
-// function swap($arr)
-// {
-//     $i = $arr[0];
-//     $arr[0] = $arr[1];
-//     $arr[1] = $i;
-//     array_push($arr[0], "1110");
-//     echo print_r($arr);
-//     //array_splice($arr,0,$arr[1]);
-// }
-
 //item 1 is the original object
 $item1 = new Item("Iiiii");
 //item 2 is the new object
-$item2 = clone $Item1;
-
-// $rr = ['aaaa', 'bbbb'];
-// swap($arr);
+$item2 = clone $item1;
 ?>

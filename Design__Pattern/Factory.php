@@ -98,7 +98,6 @@ class CarFactory
 }
 //var racecar is the race car object
 $racecar = CarFactory::getCar('race', 'red');
-//var_dump($racecar);
 $passengercar = CarFactory::getCar("passenger","blue");
 echo "Reflection To Check Properties\n";
 $ref = new ReflectionObject($racecar);
