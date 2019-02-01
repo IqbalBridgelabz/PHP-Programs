@@ -1,6 +1,11 @@
 <?php
-
-//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+/********************************************************************************************
+* Purpose  : Search a word in a string using Insertion sort
+* File Name: StringInsertionSort.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require ("Utility.php");
 //PHP program for insertion sort for string 
 echo "Enter String : ";

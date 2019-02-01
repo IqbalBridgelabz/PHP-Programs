@@ -1,8 +1,11 @@
 <?php
-/**
- * One string is an anagram of another if the second is simply a rearrangement of the first. For example, 'heart' and 'earth' are anagrams...
- */
-//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+/********************************************************************************************
+* Purpose  : Program to check whether string is anagram or not 
+* File Name: StringAnagram.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 19/01/2019
+********************************************************************************************/
     require ("Utility.php");
     echo "Enter first string: ";
     $str  = Utility::getString();

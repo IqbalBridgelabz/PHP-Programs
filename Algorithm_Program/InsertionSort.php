@@ -1,8 +1,11 @@
 <?php 
-/**
- * Reads in strings from standard input and prints them in sorted order.
- */
-//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+/********************************************************************************************
+* Purpose  : Search a word in a string using Insertion sort
+* File Name: StringInsertionSort.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require ("Utility.php");
 $arr1 = file_get_contents("String.txt");
 $arr2 = explode(" ",$arr1);

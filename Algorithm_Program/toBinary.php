@@ -1,8 +1,11 @@
 <?php  
-/**
- * function to convert  decimal to binary
- * PHP program to Swap nibbles and find the new number.
- */
+/********************************************************************************************
+* Purpose  : Program to convert decimol to binary 
+* File Name: toBinary.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require ("Utility.php");
 echo "Enter number: ";
 $num = Utility::getInt();

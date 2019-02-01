@@ -1,4 +1,13 @@
 <?php
+/********************************************************************************************
+ * Purpose : Write a program to read in Stock Names, Number of Share, Share Price. 
+ *           Print a Stock Report with total value of each Stock and the total value of Stock.
+
+ * File Name: Stock_Report.php
+ * Author   : @Hamid Iqbal Khan
+ * Version  : 1.0
+ * Since    : 25/01/2019
+ ********************************************************************************************/
 require "Utility.php";
 static $valueOfTotalStock = 0;
 static $valueOfEachStock;

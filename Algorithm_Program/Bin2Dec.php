@@ -1,8 +1,12 @@
 <?php
+/********************************************************************************************
+* Purpose  : Program to convert binary to decimol 
+* File Name: toBinary.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require ("Utility.php");
-/**
- * function to convert binary to decimal 
- */
 echo "Enter Number : ";
 $num = Utility::getInt();
 binToDec($num);

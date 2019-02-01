@@ -1,8 +1,12 @@
 <?php
-// Merge sort program
+/********************************************************************************************
+* Purpose  : Search a a number in an array using merge sort
+* File Name: MergeSort.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require ("Utility.php");
-// Utility::merge_sort($my_array);
-// Utility::merge($left,$right);
 function merge_sort($my_array){
 	if(count($my_array) == 1 ) return $my_array;
 	$mid = count($my_array) / 2;
@@ -33,7 +37,6 @@ function merge($left, $right){
 	}
 	return $res;
 }
-//$test_array = array(100, 54, 7, 2, 5, 4, 1);
 $arr = Utility::getIntArr();
 echo "Original Array : ";
 echo implode(', ',$arr );

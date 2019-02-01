@@ -1,8 +1,11 @@
 <?php 
-/**
- * Binary search program for integer
- */
-//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+/********************************************************************************************
+* Purpose  : Search a number in an array using binary search 
+* File Name: IntegerBinarySearch.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require ("Utility.php");
 function binarySearch( &$arr, $x) 
 { 

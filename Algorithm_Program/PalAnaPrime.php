@@ -1,7 +1,12 @@
 
 <?php	
-// A function that reurns true only if num 
-// contains one digit 
+/********************************************************************************************
+* Purpose  : program to find palindrome and anagram prime
+* File Name: PalAnaPrime.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 function oneDigit($num) 
 { 
 

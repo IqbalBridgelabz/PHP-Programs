@@ -1,11 +1,13 @@
 
 <?php
+/********************************************************************************************
+* Purpose  : Program to create random question
+* File Name: QuestionNum.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require("Utility.php");
-/**
- * takes a command-line argument N, 
- * asks you to think of a number between 0 and N-1, 
- * where N = 2^n, and always guesses the answer with n questions.
- */	
 function binarySearch($lower,$upper,$middle,$count,$input,$n)
 {
 

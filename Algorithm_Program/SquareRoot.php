@@ -1,8 +1,11 @@
 <?php
-/**
- * To find Square root
- */
-//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+/********************************************************************************************
+* Purpose  : Program to find square root
+* File Name: SquareRoot.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require ("Utility.php");
  echo "Enter value of C: ";
  $c = Utility::getInt();

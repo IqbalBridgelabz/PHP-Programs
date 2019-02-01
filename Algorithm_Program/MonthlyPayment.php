@@ -1,8 +1,11 @@
 <?php
-/**
- * Program to calculate monthly payment 
- */
-//require ("/home/admin1/iqbal/Functional_Programs/Utility.php");
+/********************************************************************************************
+* Purpose  : Program to count monthly payment 
+* File Name: MonthlyPayment.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 18/01/2019
+********************************************************************************************/
 require ("Utility.php");
 echo "Enter year :";
 $y = Utility::getInt();

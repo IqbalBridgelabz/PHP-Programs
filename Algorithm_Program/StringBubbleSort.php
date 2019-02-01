@@ -1,18 +1,15 @@
-<?php
+<?php 
 /********************************************************************************************
-* Purpose  : program to print prime number
-* File Name: PrimeNum.php
+* Purpose  : Search a word in a string using bubble sort
+* File Name: StringBubbleSort.php
 * Author   : @Hamid Iqbal Khan
 * Version  : 1.0
 * Since    : 16/01/2019
 ********************************************************************************************/
 require ("Utility.php");
-echo "Enter the value : ";
-$num = Utility::getInt();
-$prime = Utility::IsPrime($num);
-echo $prime;
+
+$str1 = file_get_contents("String.txt");
+$str3 = explode(" ",$str1);
+Utility::stringSearch($str3);
+
 ?>
- 
-  
-
-

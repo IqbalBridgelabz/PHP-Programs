@@ -1,5 +1,20 @@
 <?php
+/********************************************************************************************
+ * Purpose : Extend the above program to Create InventoryManager to manage the Inventory.
+ *           The Inventory Manager will use InventoryFactory to create Inventory Object from JSON.
+ *           The InventoryManager will call each Inventory Object in its list to calculate the
+ *           Inventory Price and then call the Inventory Object to return the JSON String. 
+ *           The main program will be with InventoryManager
+
+ * File Name: StockAccount.php
+ * Author   : @Hamid Iqbal Khan
+ * Version  : 1.0
+ * Since    : 26/01/2019
+ ********************************************************************************************/
 require_once("5StockAccount.php");
+/**
+ * add function to implements item
+ */
 function add()
 {
     $arr = json_decode(file_get_contents("5StockAccountShareFile.json"), true);
@@ -13,7 +28,9 @@ function add()
     $amount = Utility::getInt();
     buy($amount, $symbol);
 }
-
+/**
+ * function to remove item
+ */
 function remove()
 {
     $stockAcount = json_decode(file_get_contents("5StockAccount.json"), true);
@@ -35,7 +52,9 @@ function remove()
     }
     echo "no data found\n";
 }
-
+/**
+ * main function 
+ */
 function mainll()
 {
     $n = 1;

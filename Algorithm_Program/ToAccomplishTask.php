@@ -1,8 +1,12 @@
 <?php
 
-/*
- * Complete the taskScheduling function below.
- */
+/********************************************************************************************
+* Purpose  : Program to calclate accomplish task
+* File Name: ToaccomplishTask.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 function taskScheduling($d, $m) {
     /*
      * Write your code here.
