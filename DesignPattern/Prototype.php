@@ -42,7 +42,7 @@ class Item
     }
 }
 //item 1 is the original object
-$item1 = new Item("Iiiii");
+$item1 = new Item("Vivo");
 //item 2 is the new object
 $item2 = clone $item1;
 ?>

@@ -1,6 +1,6 @@
 <?php
 /********************************************************************************************
-* Purpose  : Search a a number in an array using merge sort
+* Purpose  : Search a number in an array using merge sort
 * File Name: MergeSort.php
 * Author   : @Hamid Iqbal Khan
 * Version  : 1.0

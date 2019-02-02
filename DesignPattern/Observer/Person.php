@@ -1,7 +1,16 @@
 <?php
+/********************************************************************************************
+ * Purpose : Use Observer Pattern to create a Book and Author deatils borrow or return by
+ *           Book Borrower.
+ * File Name: Person.php
+ * Author   : @Hamid Iqbal Khan
+ * Version  : 1.0
+ * Since    : 31/01/2019
+ **********************************************************************************************/
 require_once "Mail.php";
 require_once "Person.php";
 require_once "PostOffice.php";
+require "/home/admin1/iqbal/Algorithm_Program/Utility.php";
 /**
  * interface observer to implement observer behaviour in the class
  */
@@ -26,14 +35,18 @@ class Person implements Observer
      * function to update the peron about the mail
      */
     function update(Mail $mail){
-        echo "New Mail to ".$mail->rname." - ".$mail->getMessage()."from $mail->sname\n" ;
+        echo "New Mail From ".$mail->rname." - ".$mail->getMessage().$mail->sname."\n" ;
     }
 }
 $post= new PostOffice();
-$hmd = new Person("Hamid");
-$iqb = new Person("Iqbal");
+echo "Enter Receiver name: ";
+$var1 = Utility::getArrayString();
+echo "Enter Sender name: ";
+$var2 = Utility::getArrayString();
+$hmd = new Person($var1);
+$iqb = new Person($var2);
 $post->attach($hmd);
 $post->attach($iqb);
-$mail = new Mail("Hamid: ", "Where are you ? ",":Iqbal");
+$mail = new Mail($var1, "Where are you ? ",$var2);
 $post->addMail($mail);
 ?>

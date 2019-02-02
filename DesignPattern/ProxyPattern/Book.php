@@ -1,4 +1,12 @@
 <?php
+/********************************************************************************************
+ * Purpose : Use Proxy Pattern to create a Book and Author deatils borrow or return by
+ *           Book Borrower.
+ * File Name: Book.php
+ * Author   : @Hamid Iqbal Khan
+ * Version  : 1.0
+ * Since    : 02/02/2019
+ **********************************************************************************************/
 require_once  ("BookList.php");
 require_once  ("ProxyBookList.php");
 class Book {
