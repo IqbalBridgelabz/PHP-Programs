@@ -1,114 +1,12 @@
 <?php
 /**
  * Helper Function containing methods to use in othere php class
- * @author Iqbal 
+ * @author Hamid Iqbal Khan
+ * @version 3.0   
+ * @since 29-01-2019
  */
 class Utility
 {
-
-    
-        /**
-        * function getInt is method which take user input and 
-        * check the input is numeric or not
-        * @return $n int type value
-        */
-        // function getInt()
-        // {
-        //     fscanf(STDIN,"%d\n",$n);
-        //     while(!is_numeric($n))
-        //     {
-        //         echo "enter numeric value"."\n";
-        //         fscanf(STDIN,"%d\n",$n);
-        //     }
-        //     return $n;     
-        // }
-
-        /**
-         * function read file is to read file and return in the form of string
-         * 
-         * @param file path
-         * @return string data of file
-         */
-        static function readFl($file)
-        {
-            $fileC = fopen($file,"r") or die("unable to open");
-
-            return fread($fileC, filesize($file));
-            fclose($fileC);
-        }
-
-        /**
-         * function writeFl file is to write file
-         * 
-         * @param file path
-         * @param $data to store in file
-         */
-        static function writeFl($data,$file)
-        {
-            $filec = fopen($file,"w") or die("unable to open");
-            fwrite($filec,$data);
-        }
-
-    
-    /**
-     * 2D String Array
-     */
-    public static function TwoDStrintArray(){
-        echo "Enter Row Size : ";
-        $r = Utility::getInt();
-        echo "Enter Column Size : ";
-        $c = Utility::getInt();
-        $arr = [];
-        for($i=0; $i<$r; $i++){
-            $iArr = [];
-            for($j=0; $j<$c; $j++){
-                $iArr[$j] = Utility::getString();
-            }
-            array_push($arr,$iArr);
-        }
-        for($i=0; $i<$r; $i++){
-            for($j=0; $j<$c; $j++){
-                echo mt_rand(0,(int)$arr[$i][$j])." ";
-            }
-            echo "\n";
-        }
-    }
-
-    //string array
-    public static function getArrayString(){
-        return trim(fgets(STDIN));
-    } 
-   
-// to check prime number
-  public static function primeNumber()
-        {
-            $arr = array();
-            $index = 0;
-            /*
-            * for loop initialize from 2 because 0 and 1 are not prime number
-            */
-            for ($i = 2; $i < 1000; $i++) {
-                /*
-                * for loop to check that number is divisible by any other number or not if it
-                * is divisible by any other number then loop will break and return false
-                */
-                $b = true;
-                for ($j = 2; $j <= $i / 2; $j++) {
-                    if ($i % $j == 0) {
-                        $b = false;
-                        break;
-                    }
-                }
-                /*
-                * if number is divisible by only one and itself the it will add to ArrayList
-                */
-                if ($b == true) {
-                    $arr[$index++] = (string)$i;
-                    //echo $i."\n";
-                }
-            }  
-            return $arr; 
-        }
     /**
      * Method to print heads ands and tails by taking input for no of times
      * @param times the no of times to flip the coin
@@ -156,7 +54,7 @@ class Utility
     static function getString(){
             fscanf(STDIN,"%s\n",$val);
             while(!is_string($val)){
-                echo "ivalid input try again";
+                echo "ivalid input try again\n";
                 fscanf(STDIN,"%s\n",$val);
             }
              return $val ;
@@ -175,6 +73,7 @@ class Utility
             }
             return $arr ;
        }
+
        /**
         * Function to create String array and return the array
         * @return the string array by getting user input
@@ -189,6 +88,7 @@ class Utility
         }
         return $arr ;
    }
+
    /**
     * Function to print contents of array
     *@param arr the array to print contents of 
@@ -202,6 +102,7 @@ class Utility
        $s = $s."}";
        return $s ;
    }
+
    /**
      * prints Power of 2
      * @param power the value till to count power of 2
@@ -385,6 +286,7 @@ class Utility
         } 
         return $arr;
     }
+
     /**
      * Function to find squre root of a no using newtons method
      * @param c the integer no of which to find square root 
@@ -398,6 +300,7 @@ class Utility
         }
         return $t ;
     }
+
     /**
      * Function to calculate temperature from celcius to fahrenhiet and vice-versa
      * 
@@ -414,6 +317,7 @@ class Utility
         }
         return $conv ;
     }
+
     /** 
      * static function calculating day of week using below formula and returning it
      * 
@@ -426,6 +330,8 @@ class Utility
         $d0 = ($d + $x + floor((31*$m0) / 12)) % 7;
         return $d0;
     }
+
+
     /**
      * Function to convert decimal to binary 
      * 
@@ -440,6 +346,7 @@ class Utility
         }
         return $bin;
     }
+
     /**
      * function to convert binary to decimal 
      */
@@ -456,22 +363,25 @@ class Utility
         echo $dec ;
         return $dec ;
     }
+
     //sets the start time ot system time
     static function startTime(){
         return $start = (microtime(true)*1000);
     }
+
     //sets stop time at system time
     static function stopTime(){
         return $stop = (microtime(true)*1000);
     }
+
     //get elapsed time by counting start time and stop time
     static function elapsedTime($start , $stop){
         return "Time : ".(($stop-$start)/1000)." seconds\n";
     }
+
     /**
      * function to read the file and return the array of words
      */
-    //$fname = "number.txt";
     static function readFile($fname){
         //opens the file if not found die by printing the error "unable to open file"
         $file = fopen($fname ,"r") or die("Unable to open file ");
@@ -480,6 +390,7 @@ class Utility
         //returns contents
         return $contents ;
     }
+
     static function print2d($arr){
         for($i = 0 ;$i<count($arr);$i++){
             echo "\n";
@@ -488,8 +399,17 @@ class Utility
             }
         }
     }
+
+
+
+
+
+
+
     
 } 
+
+
 /**
  * Function to check the expression have balanced parenthesis or not 
  */
@@ -507,10 +427,8 @@ function balParethesis($exp){
         else if($exp[$i]==')'){
             //checking if already empty
             if($stack->isEmpty())
-            {
-                echo"Unbalanced\n";
-            return;
-        }
+            {echo"Unbalanced\n";
+            return;}
             $stack->pop();
         }
     }
@@ -522,5 +440,7 @@ function balParethesis($exp){
         echo "Paranthesis not balanced\n";
     }
 }
+
 Utility::isAnagram(5,15)
+
 ?>

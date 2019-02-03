@@ -1,48 +1,56 @@
 <?php
-
 /**
- * top level exception handler function to handle exception
+ * Implementation of Prototype on Book Information
  */
-set_exception_handler(function ($e){
-    echo "\nException Occurred\n";
-    echo $e->getMessage();
-});
-
-/**
- * Class subitem
- */
-class SubItem{
-}
-
-/**
- * Class Item 
- */
-class Item
-{
-    // var bame and sub to store name and the sub class object
-    public $name;
-    public $sub ;
-
-    /**
-     * constructor of the class to init properties
-     */
-    function __constructor($name)
-    {
-        $this->name = $name;
-        $sub = new Item();
+abstract class BookPrototype {
+    protected $title;
+    protected $topic;
+    abstract function __clone();
+    function getTitle() {
+        return $this->title;
     }
-
-    /**
-     * Magic Method clone to clone the attributes/properties of the object
-     */
-    function __clone()
-    {
-        $this->name = clone $this->name ;
-        $this->sub = clone $this->sub ;
+    function setTitle($titleIn) {
+        $this->title = $titleIn;
+    }
+    function getTopic() {
+        return $this->topic;
     }
 }
-//item 1 is the original object
-$item1 = new Item("Vivo");
-//item 2 is the new object
-$item2 = clone $item1;
+/**
+ * Implementation of PHPBookPrototype extends BookPrototype
+ */
+class PHPBookPrototype extends BookPrototype {
+    function __construct() {
+        $this->topic = 'PHP';
+    }
+    function __clone() {
+    }
+}
+/**
+ * Implementation of SQLBookPrototype extends BookPrototype
+ */
+class SQLBookPrototype extends BookPrototype {
+    function __construct() {
+        $this->topic = 'Python';
+    }
+    function __clone() {
+    }
+}
+ 
+echo "\nBEGIN TESTING PROTOTYPE PATTERN\n\n";
+$phpProto = new PHPBookPrototype();
+$sqlProto = new SQLBookPrototype();
+$book1 = clone $sqlProto;
+$book1->setTitle('Book Details');
+echo "Book 1 topic: ".$book1->getTopic()."\n";
+echo "Book 1 title: ".$book1->getTitle()."\n";
+$book2 = clone $phpProto;
+$book2->setTitle('Hamid PHP7');
+echo "\nBook 2 topic: ".$book2->getTopic()."\n";
+echo "Book 2 title: ".$book2->getTitle()."\n";
+$book3 = clone $sqlProto;
+$book3->setTitle('Iqbal Python');
+echo "\nBook 3 topic: ".$book3->getTopic()."\n";
+echo "Book 3 title: ".$book3->getTitle()."\n";
+echo "\nEND TESTING PROTOTYPE PATTERN\n\n";
 ?>

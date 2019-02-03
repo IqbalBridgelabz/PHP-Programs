@@ -18,7 +18,7 @@ set_exception_handler(function ($e) {
 
 //require the functions in below files to work
 require("Utility.php");
-require("/home/admin1/iqbal/DataStructure/Queue.php");
+require("/home/bridgelabz/Chirag/BridgeLabzPHP/DataStructure/Queue.php");
 
 /**
  * clss to initialize the property of the card with suit and rank
@@ -132,7 +132,7 @@ function playerDist($deck)
 {
     $playerQue = new Queue();
     for ($i = 1; $i < 5; $i++) {
-        echo "Enter player $i Name : ";
+        echo "Enter player $i name ";
         $player = new Player(Utility::getString());
         for ($j=0; $j < 9 ; $j++) { 
             $r = rand(0, 3);
@@ -148,15 +148,23 @@ function playerDist($deck)
 function ShowCards(Queue $playerQue){
     while($playerQue->isEmpty()==false){
         $pl = $playerQue->dequeue();
-        echo $pl."--[";
+        echo $pl."-{";
         while($pl->cards->isEmpty()==false){
             echo $pl->cards->dequeue()."," ;
         }
-        echo "]\n\n";
+        echo "}\n\n";
     }
 }
 
 $ss = getDeck();
 $ss = playerDist($ss);
 ShowCards($ss);
+
+
+
+
+
+
+
+
 ?>

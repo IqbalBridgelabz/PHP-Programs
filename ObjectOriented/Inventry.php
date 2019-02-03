@@ -7,7 +7,7 @@
  * Version  : 1.0
  * Since    : 25/01/2019
  ********************************************************************************************/
-$character = file_get_contents('1Inventry.json');
+$character = file_get_contents('Inventry1.json');
 $characters = json_decode($character);
 foreach($characters as $result){
     echo "name :".$result->name."  price: $".$result->price. " weight :".$result->weight."\n";
