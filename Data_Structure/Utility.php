@@ -1,8 +1,12 @@
 <?php
-/**
- * Helper Function containing methods to use in othere php class
- * @author Iqbal 
- */
+ /**
+     * 
+     * Purpose: Utility is a helper class which hold funtion.
+     *
+     *  @author  Hamid Iqbal Khan
+     *  @version 1.0
+     *  @since   30-01-2019
+     */
 class Utility
 {
 // to check prime number

@@ -1,4 +1,14 @@
-<?php    
+<?php   
+/********************************************************************************************
+* Purpose  :  Take a range of 0 - 1000 Numbers and find the Prime numbers in that range. 
+              Store the prime numbers in a 2D Array, 
+              the first dimension represents the range 0-100, 100-200, and so on. 
+              While the second dimension represents the prime numbers in that range
+* File Name: PrimeNo2D.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
     require("Utility.php");
     //get prime number 0 to 1000
     $arr = Utility::primeNumber();

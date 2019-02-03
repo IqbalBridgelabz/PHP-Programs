@@ -1,4 +1,10 @@
 <?php 
+/**
+ * Helper Function containing methods to use in othere php class
+ * @author Hamid Iqbal Khan
+ * @version 3.0   
+ * @since 2-01-2019
+ */
 class Utility{
     // to find power of two of given number upto N.
     public static function power($num){

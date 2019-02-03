@@ -1,6 +1,14 @@
 <?php
-
- /** require functions and classes in below files to works */
+/********************************************************************************************
+* Purpose  :Write a program Calendar.java that takes the month and year as command-line arguments 
+            and prints the Calendar of the month. 
+            Store the Calendar in an 2D Array, the first dimension the week of the month and 
+            the second dimension stores the day of the week. Print the result as following
+* File Name: SWeekDay.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require("Utility.php");
 require("Stack.php");
 class WeekDay

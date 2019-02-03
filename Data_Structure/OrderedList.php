@@ -1,4 +1,7 @@
 <?php
+/**
+ * Ordered List class for Linked List implementation
+ */
 require("Node.php");
 class OrderedList
 {

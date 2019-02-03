@@ -1,9 +1,14 @@
 
-/***********************************************************************************************
- * Read .a List of Numbers from a file and arrange it ascending Order in a Linked List.*********
- * Take user input for a number, ***************************************************************
- * if found then pop the number out of the list else insert the number in appropriate position.*/
 <?php
+/********************************************************************************************
+* Purpose  : Read a List of Numbers from a file and arrange it ascending Order in a Linked List.
+             Take user input for a number,
+             if found then pop the number out of the list else insert the number in appropriate position 
+* File Name: AOrderedList.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
  /** requires the function in below files to work */
 require("Utility.php");
 require("OrderedList.php");

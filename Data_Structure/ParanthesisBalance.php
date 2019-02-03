@@ -1,8 +1,13 @@
 <?php
-    /**
-    * Purpose: balanceParentheses is to check the parentheses of the arithmetic expression
-    * is balance or not with the help of stack
-    */
+   /********************************************************************************************
+* Purpose  : Take an Arithmetic Expression such as (5+6)∗(7+8)/(4+3)(5+6)∗(7+8)/(4+3) 
+             where parentheses are used to order the performance of operations. 
+             Ensure parentheses must appear in a balanced fashion.
+* File Name: ParenthesisBalance.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
     require("Stack.php");
     //object of stack
     $st = new Stack();

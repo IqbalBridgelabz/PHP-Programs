@@ -1,7 +1,11 @@
 <?php
-/**
- * Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N 
- */
+/********************************************************************************************
+ * Purpose  : Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N    
+ * File Name: HarmononicNUm.php
+ * Author   : @Hamid Iqbal Khan
+ * Version  : 1.0
+ * Since    : 2/01/2019
+ **********************************************************************************************/
 require "Utility.php";
 echo "Enter  num:";
 $N = Utility::getInt();

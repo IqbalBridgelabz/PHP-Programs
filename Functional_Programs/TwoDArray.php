@@ -1,7 +1,11 @@
 <?php 
-/**
- * A library for reading in 2D arrays of integers, doubles, or booleans from standard input and printing them out to standard output.
- */
+/********************************************************************************************
+ * Purpose  : A library for reading in 2D arrays of integers, doubles, or booleans from standard input and printing them out to standard output.
+ * File Name: TwoDArray.php
+ * Author   : @Hamid Iqbal Khan
+ * Version  : 1.0
+ * Since    : 2/01/2019
+ **********************************************************************************************/
 require ("Utility.php");
 //Utility::twoDArray();
 echo "1 - Integer: \n";

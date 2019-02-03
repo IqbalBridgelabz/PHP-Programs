@@ -1,7 +1,11 @@
-<?php
-/**
- * Write a program Quadratic.java to find the roots of the equation a*x*x + b*x + c. Since the equation is x*x, hence there are 2 roots.
- */
+<?php 
+/********************************************************************************************
+ * Purpose  : To find Quadratic Roots of given value
+ * File Name: Quadratic.php
+ * Author   : @Hamid Iqbal Khan
+ * Version  : 1.0
+ * Since    : 2/01/2019
+ **********************************************************************************************/
 require ("Utility.php");
 echo " Enter the Value of A: ";
 $a = Utility::getInt();

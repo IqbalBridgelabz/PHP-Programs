@@ -1,7 +1,13 @@
 <?php
-/**
- * construct an algorithm to input a string of characters and check whether it is a palindrome using Dequeue
- */
+/********************************************************************************************
+* Purpose  :  A palindrome is a string that reads the same forward and backward, 
+              for example, radar, toot, and madam. We would like to construct an algorithm to 
+              input a string of characters and check whether it is a palindrome.
+* File Name: PalindromeDequeue.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require("Utility.php");
 /**
  * Function to check if a string is pallindrome or not using dequeue

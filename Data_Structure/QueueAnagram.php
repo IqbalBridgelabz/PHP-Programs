@@ -1,11 +1,13 @@
 <?php
-/**
- *  Prime Numbers that are Anagram in the Range of 0 - 1000 in a Queue using the Linked List and
- *  Print the Anagrams from the Queue
- * 
- */
- //require functions in below files to work 
-require("Utility.php");
+/********************************************************************************************
+* Purpose  : Extend the Prime Number Program and store only the numbers in that range that are Anagrams.
+             For e.g. 17 and 71 are both Prime and Anagrams in the 0 to 1000 range. 
+             Further store in a 2D Array the numbers that are Anagram and numbers that are not Anagram
+* File Name: QueueAnagram.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require("Queue.php");
 /**
  * Function to run and test the program and print result to user

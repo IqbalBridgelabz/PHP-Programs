@@ -1,5 +1,13 @@
 <?php
-//require functions to below files to run
+/********************************************************************************************
+* Purpose  : Extend the Prime Number Program and store only the numbers in that range that are Anagrams.
+             For e.g. 17 and 71 are both Prime and Anagrams in the 0 to 1000 range. 
+             Further store in a 2D Array the numbers that are Anagram and numbers that are not Anagram
+* File Name: StackAnagram.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require("Utility.php");
 require("Stack.php");
 /**

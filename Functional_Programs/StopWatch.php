@@ -1,7 +1,11 @@
 <?php 
-/**
- * Write a Stopwatch Program for measuring the time that elapses between the start and end clicks
- */
+/********************************************************************************************
+ * Purpose  : Write a Stopwatch Program for measuring the time that elapses between the start and end clicks
+ * File Name: StopWatch.php
+ * Author   : @Hamid Iqbal Khan
+ * Version  : 1.0
+ * Since    : 2/01/2019
+ **********************************************************************************************/
 require ("Utility.php");
 $start  = round(microtime(true)*1000);
 echo $start."\n";

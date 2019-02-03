@@ -1,7 +1,11 @@
-<?php
-/**
- * Write a program WindChill.java that takes two double command-line arguments t and v and prints the wind chill.
- */
+<?php 
+/********************************************************************************************
+ * Purpose  : Write a program WindChill.java that takes two double command-line arguments t and v and prints the wind chill.
+ * File Name: TwoDArray.php
+ * Author   : @Hamid Iqbal Khan
+ * Version  : 1.0
+ * Since    : 2/01/2019
+ **********************************************************************************************/
 require ("Utility.php");
 echo " Enter Temperature Value: ";
 $t = Utility::getFloat();

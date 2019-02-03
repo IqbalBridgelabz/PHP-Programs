@@ -1,8 +1,12 @@
 <?php
-/**
- * set top level error handler function to handle in case of error occurence
- * 
- */
+/********************************************************************************************
+* Purpose  :Create a Slot of 10 to store Chain of Numbers that belong to each Slot 
+            to efficiently search a number from a given set of number
+* File Name: HashingFunction.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 set_error_handler(function ($errno, $errstr, $error_file, $error_line) {
     echo "!!!!Error Occured!!!!!!!\n";
     echo "Error: [$errno] $errstr - $error_file:$error_line \n";

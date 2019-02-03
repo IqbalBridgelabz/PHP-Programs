@@ -1,9 +1,13 @@
 <?php
-/**
- *  Program which creates Banking Cash Counter where people come in to deposit Cash and withdraw Cash. 
- *  Have an input panel to add people to Queue to either deposit or withdraw money and dequeue the people. Maintain the Cash Balance.
- */
-
+/********************************************************************************************
+* Purpose  : Create a Program which creates Banking Cash Counter where people come in to deposit Cash 
+             and withdraw Cash. Have an input panel to add people to Queue to either deposit or withdraw 
+             money and dequeue the people. Maintain the Cash Balance
+* File Name: BankCounter.php
+* Author   : @Hamid Iqbal Khan
+* Version  : 1.0
+* Since    : 16/01/2019
+********************************************************************************************/
 require("Utility.php");
 require("Queue.php");
 /**
