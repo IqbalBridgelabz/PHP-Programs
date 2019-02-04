@@ -1,5 +1,9 @@
 <?php
-require_once "Person.php";
+include_once "Person.php";
+include_once ("Mail.php");
+include_once ("Person.php");
+include_once ("PostOffice.php");
+include_once ("/home/admin1/iqbal/Algorithm_Program/Utility.php");
 /**
  * Class mail to make mail as an object
  */

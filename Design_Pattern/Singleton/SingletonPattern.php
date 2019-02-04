@@ -8,7 +8,6 @@
  * Since    : 31/01/2019
  **********************************************************************************************/
 require_once("BookBorrower.php");
-// require ("BookSingleton.php");
 require ("/home/admin1/iqbal/Algorithm_Program/Utility.php");
 
 class Singleton{

@@ -2,6 +2,7 @@
 /**
  * interface Adapter to create abstract function which is inherit and implements in respective class
  */
+require_once "Socket.php";
 interface Adapter
 {
     public function get120Volts();

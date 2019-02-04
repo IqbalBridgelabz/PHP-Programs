@@ -7,10 +7,10 @@
  * Version  : 1.0
  * Since    : 31/01/2019
  **********************************************************************************************/
-require_once "Mail.php";
-require_once "Person.php";
-require_once "PostOffice.php";
-require "/home/admin1/iqbal/Algorithm_Program/Utility.php";
+require_once ("Mail.php");
+require_once ("Person.php");
+include_once ("PostOffice.php");
+require_once ("/home/admin1/iqbal/Algorithm_Program/Utility.php");
 /**
  * interface observer to implement observer behaviour in the class
  */
@@ -38,7 +38,7 @@ class Person implements Observer
         echo "New Mail From ".$mail->rname." - ".$mail->getMessage().$mail->sname."\n" ;
     }
 }
-$post= new PostOffice();
+$post = new PostOffice();
 echo "Enter Receiver name: ";
 $var1 = Utility::getArrayString();
 echo "Enter Sender name: ";

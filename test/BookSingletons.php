@@ -1,11 +1,13 @@
 <?php
-//require_once("SingletonPattern.php");
+require_once("SingletonPattern.php");
 /**
  * class BookSingleton which implements Singleton pattern
  */
 class BookSingleton {
     private $author;
     private $title;
+    // private $author = 'Hamid Iqbal Khan';
+    // private $title  = 'Design Patterns';
     private static $book = NULL;
     private static $check = FALSE;
     /**

@@ -13,7 +13,7 @@
 require ("Laptop.php");
 require ("Server.php");
 require ("Pc.php");
-require ("/home/admin1/iqbal/DesignPattern/Utility.php");
+require ("/home/admin1/iqbal/Design_Pattern/Utility.php");
 /**
  * Factory class For creating an object and and calling the respective class according to requirements 
  */

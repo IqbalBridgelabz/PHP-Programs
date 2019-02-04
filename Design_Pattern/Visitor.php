@@ -68,12 +68,12 @@ class ConcreteVisitor1 implements Visitor
 {
     public function visitConcreteComponentA(ConcreteComponentA $element)
     {
-        echo $element->exclusiveMethodOfConcreteComponentA()." + ConcreteVisitor1\n";
+        echo $element->exclusiveMethodOfConcreteComponentA()." --> Visitor1\n";
     }
 
     public function visitConcreteComponentB(ConcreteComponentB $element)
     {
-        echo $element->specialMethodOfConcreteComponentB()." + ConcreteVisitor1\n";
+        echo $element->specialMethodOfConcreteComponentB()." --> Visitor1\n";
     }
 }
 
@@ -81,12 +81,12 @@ class ConcreteVisitor2 implements Visitor
 {
     public function visitConcreteComponentA(ConcreteComponentA $element)
     {
-        echo $element->exclusiveMethodOfConcreteComponentA()." + ConcreteVisitor2\n";
+        echo $element->exclusiveMethodOfConcreteComponentA()." --> Visitor2\n";
     }
 
     public function visitConcreteComponentB(ConcreteComponentB $element)
     {
-        echo $element->specialMethodOfConcreteComponentB()." + ConcreteVisitor2\n";
+        echo $element->specialMethodOfConcreteComponentB()." --> Visitor2\n";
     }
 }
 

@@ -1,5 +1,4 @@
 <?php
-// require ("SingletonPattern.php");
 require ("BookSingleton.php");
 /**
   * Book Borrower Class to implements 

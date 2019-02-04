@@ -2,7 +2,6 @@
 /**
  * interface Subject to create abstract function which is inherit and implements in respective class
  */
-require_once "Person.php";
 interface Subject
 {
     /**
