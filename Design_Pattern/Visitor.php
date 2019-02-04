@@ -103,10 +103,10 @@ function clientCode(array $components, Visitor $visitor)
   
 }
 
-// $components = [
-//     new ConcreteComponentA,
-//     new ConcreteComponentB,
-// ];
+$components = [
+    new ConcreteComponentA,
+    new ConcreteComponentB,
+];
 
 echo "The client code works with all visitors via the base Visitor interface:\n";
 $visitor1 = new ConcreteVisitor1;
@@ -116,3 +116,4 @@ echo "\n";
 echo "It allows the same client code to work with different types of visitors:\n";
 $visitor2 = new ConcreteVisitor2;
 clientCode($components, $visitor2);
+?>

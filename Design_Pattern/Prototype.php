@@ -38,19 +38,19 @@ class SQLBookPrototype extends BookPrototype {
 }
  
 echo "\nBEGIN TESTING PROTOTYPE PATTERN\n\n";
-$phpProto = new PHPBookPrototype();
-$sqlProto = new SQLBookPrototype();
-$book1 = clone $sqlProto;
-$book1->setTitle('Book Details');
-echo "Book 1 topic: ".$book1->getTopic()."\n";
-echo "Book 1 title: ".$book1->getTitle()."\n";
-$book2 = clone $phpProto;
-$book2->setTitle('Hamid PHP7');
-echo "\nBook 2 topic: ".$book2->getTopic()."\n";
-echo "Book 2 title: ".$book2->getTitle()."\n";
-$book3 = clone $sqlProto;
-$book3->setTitle('Iqbal Python');
-echo "\nBook 3 topic: ".$book3->getTopic()."\n";
-echo "Book 3 title: ".$book3->getTitle()."\n";
+$phpProto = new PHPBookPrototype();     //creating new object of PHPBookPrototype
+$sqlProto = new SQLBookPrototype();     //creating new object of SQLBookPrototype
+$book1 = clone $sqlProto;               // cloning var $sqlProto
+$book1->setTitle('Book Details');       // passing the book titles for book 1
+echo "Book 1 topic: ".$book1->getTopic()."\n"; //printing Book 1 topic
+echo "Book 1 title: ".$book1->getTitle()."\n"; //printing Book 1 title
+$book2 = clone $phpProto;               // cloning var $phpProto
+$book2->setTitle('Hamid PHP7');         // passing the book titles for book 2
+echo "\nBook 2 topic: ".$book2->getTopic()."\n";  //printing Book 2 topic
+echo "Book 2 title: ".$book2->getTitle()."\n";    //printing Book 2 title
+$book3 = clone $sqlProto;                // cloning var $sqlProto
+$book3->setTitle('Iqbal Python');        // passing the book titles for book 3
+echo "\nBook 3 topic: ".$book3->getTopic()."\n";   //printing Book 3 topic
+echo "Book 3 title: ".$book3->getTitle()."\n";     //printing Book 3 title
 echo "\nEND TESTING PROTOTYPE PATTERN\n\n";
 ?>

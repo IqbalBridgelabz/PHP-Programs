@@ -1,4 +1,7 @@
 <?php
+/**
+ * interface Adapter to create abstract function which is inherit and implements in respective class
+ */
 interface Adapter
 {
     public function get120Volts();

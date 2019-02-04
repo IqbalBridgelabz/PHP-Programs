@@ -35,7 +35,9 @@ class BookBorrower {
         $this->haveBook = TRUE;
       }
     }
-
+    /**
+     * this function returns books
+     */
     function returnBook() {
       $this->borrowedBook->returnBook($this->borrowedBook);
     }

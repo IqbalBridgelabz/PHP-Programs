@@ -38,5 +38,5 @@ class Singleton{
         echo "END TESTING SINGLETON PATTERN:\n";
     }
 }
-Singleton::main();
+Singleton::main();      // calling main function
 ?>
