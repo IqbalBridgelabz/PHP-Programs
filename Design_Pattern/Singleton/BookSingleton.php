@@ -1,5 +1,8 @@
 <?php
 require_once("SingletonPattern.php");
+/**
+ * class BookSingleton which implements Singleton pattern
+ */
 class BookSingleton {
     private $author;
     private $title;

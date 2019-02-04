@@ -5,7 +5,7 @@
  * Create a JSON file having Inventory Details for Rice, Pulses and Wheats with properties name,
  * weight, price per kg.  Create the JSON from Inventory Object and output the JSON String
  * 
- * @author chiragkatare
+ * @author Hamid Iqbal
  */
 
  /**

@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * set top level error handler function to handle in case of error occurence
  * 
@@ -50,39 +48,61 @@ class Stock
         $this->quantity = $quantity;
     }
 }
-
+/**
+ * stockAcount class for perfoming operation on queue and stack
+ */
 class StockAccount
 {
     public $account;
     public $stack;
     public $queue;
-
+    /**
+     * initialization of constructor
+     */
     public function __construct($account = [],$stack = [], $queue =[])
     {
         $this->account = $account;
         $this->stack = $stack;
         $this->queue = $queue;
     }
+    /**
+     * function to get account details
+     */
     function getAccount()
     {
         return $this->account;
     }
+    /**
+     * function for stack which returns the current elements 
+     */
     function getStack()
     {
         return $this->stack;
     }
+    /**
+     * function for queue which returns the current elements 
+     */
     function getQueue()
     {
         return $this->queue;
     }
+    /**
+     * function for stack which pass the one arguments to a stack
+     */
     function setStack($stack)
     {
         $this->stack = $stack;
     }
+    /**
+     * function for queue which pass the one arguments to a queue
+     */
     function setQueue($queue)
     {
         $this->queue = $queue;
     }
+    /**
+     * this function is having one argument which holds account number
+     */
     function setAcc($account)
     {
         $this->account = $account;
@@ -291,7 +311,9 @@ function cast(&$destination, stdClass $source)
         }
     }
 }
-
+/**
+ * function fixCast take two arguments which holds destination and source
+ */
 function fixCast(&$destination, $source)
 {
     if (is_array($source)) {

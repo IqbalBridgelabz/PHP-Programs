@@ -88,7 +88,9 @@ function buy($account)
     fscanf(STDIN, "%s\n");
     return $account;
 }
-
+/**
+ * this function save item into a list
+ */
 function saveList($list){
     file_put_contents("StockList.json", json_encode($list));
 }
