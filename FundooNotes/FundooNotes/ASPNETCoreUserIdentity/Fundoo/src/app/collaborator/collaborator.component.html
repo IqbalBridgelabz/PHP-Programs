@@ -1,0 +1,43 @@
+<div>
+  <p class="textStyle">Collaborator</p>
+  <mat-divider class="divider"></mat-divider>
+  <div style="display:flex;">
+    <button mat-icon-button class="signout" style="background-color:rgb(2, 136, 209);">
+      <div class="collaborator">
+          {{EmailId}}        
+      </div>
+    </button>
+
+    <p class="SignoutName" *ngIf="ShareIdDisplay">{{name}}(owner)</p><br>
+    <p class="Email">{{EmailId}}</p>
+  </div>
+
+
+  <div style="display:flex;" *ngIf="SharedEmailId!=null;">
+    <button mat-icon-button class="signout" style="background-color:rgb(2, 136, 209);">
+      <div class="collaborator">
+        {{SharedEmailId}}
+      </div>
+    </button>
+    <p class="sharedEmail">{{SharedEmailId}}</p>
+    <button mat-icon-button class="fundoo31">
+      <img style="height:16px" src="../../assets/image/baseline-clear-24px.svg" />
+    </button>
+  </div>
+
+  <div style="display:flex;">
+    <div class="InviteCollabarator">
+      <img class="InviteCollabaratorImage" src="../../assets/image/baseline-person_add-24px.svg" />
+    </div>
+    <div>
+      <input placeholder="Person or mail to share with" class="AddPerson" [(ngModel)]="data.sharedEmail">
+      <button mat-icon-button class="fundoo31">
+        <img style="height:16px" src="../../assets/image/baseline-done-24px.svg" />
+      </button>
+    </div>
+  </div>
+</div>
+<div class="greyArea">
+  <button mat-button (click)="onNoClick()">CANCEL</button>
+  <button mat-button [mat-dialog-close]="data.sharedEmail">SAVE</button>
+</div>

@@ -1,0 +1,75 @@
+.divider{
+  width: 550px;
+}
+
+.textStyle {
+  font-weight: 400;
+  font-size: large;
+  margin-top: -8px;
+}
+.signout {
+  height: 41px;
+  width: 41px;
+  border-radius: 100%;
+  font-size: 23px;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  margin-top: 11px;
+}
+.Email {
+  font-size: small;
+  opacity: 0.9;
+  font-size: 14px;
+  margin-left: 15px;
+  margin-top: 30px;
+  height: auto;
+ font-weight:bold;
+}
+.InviteCollabarator {
+  height: 41px;
+  width: 41px;
+  background-color: white;
+  border-radius: 100%;
+  border: 1px solid grey;
+}
+.InviteCollabaratorImage {
+  margin-left: 6px;
+  margin-top: 8px;
+  opacity:0.5;
+}
+.AddPerson {
+  border: none;
+  margin-left: 14px;
+  outline:none;
+}
+.SignoutName {
+  height: fit-content;
+  margin-top: 11px;
+  margin-left: 15px;
+  font-weight: 700;
+}
+.greyArea {
+  margin: 33px -24px -24px -24px;
+  height: 57px;
+  background-color: rgb(237, 237, 237);
+}
+.fundoo31 {
+  opacity: 0.5;
+  left:237px;
+}
+.sharedEmail {
+  margin-top: 21px;
+  margin-left: 15px;
+  font-weight:700;
+}
+.collaborator {
+  display: block;
+  visibility: hidden;
+  margin-left: 14px;
+  margin-top: -1px;
+}
+
+.collaborator:first-letter {
+  visibility: visible;
+}

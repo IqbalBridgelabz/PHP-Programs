@@ -1,0 +1,32 @@
+.login-card {
+  max-width: 400px;
+  margin: auto;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-r {
+  display: flex;
+}
+
+.button-r1 {
+  flex: 1;
+  margin-right: 30px;
+}
+
+  .button-r1:last-child {
+    margin-right: 0;
+  }
+
+.dec {
+  text-decoration: none;
+}
+
+.credentialError{
+  margin-top:-50px;
+  color:red;
+  font-size:small;
+}

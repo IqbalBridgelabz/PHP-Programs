@@ -1,0 +1,148 @@
+<mat-toolbar [style.background-color]="getColor">
+  <div class="example-sidenav-content">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div class="Fundoo2" *ngIf="FundooShow">
+    <strong>Fundoo </strong> Notes
+  </div>
+  <div class="Fundoo2" *ngIf="!FundooShow">
+    {{ShowTitle}}
+  </div>
+
+
+  <div class="searchbar" [style.background-color]="searchBarColor">
+    <button mat-icon-button class="fundoo31">
+      <img src="../../assets/image/baseline-search-24px.svg" />
+    </button>
+    <input type="search" class="search" placeholder="Search" [style.background-color]="searchBarColor" />
+  </div>
+
+  <div class="fundoo3">
+    <button mat-icon-button class="fundoo31">
+      <img src="../../assets/image/baseline-refresh-24px.svg" />
+    </button>
+
+
+    <!--<button mat-icon-button class="fundoo31" (click)="toggleView()">
+      <img *ngIf="view == false" src="../../assets/image/baseline-view_agenda-24px.svg" />
+      <img style="width:33px" *ngIf="view == true" src="../../assets/image/baseline-view_quilt-24px.svg" />
+    </button>-->
+
+    <button mat-icon-button mat-button class="fundoo31" *ngIf="list" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
+      <img *ngIf="!grid" class="view" src="../../assets/image/baseline-view_quilt-24px.svg"/>
+    </button>
+
+    <button mat-icon-button mat-button class="fundoo31" *ngIf="grid" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
+      <img style="width:33px" class="view" *ngIf="grid" src="../../assets/image/baseline-view_agenda-24px.svg" />
+    </button>
+
+  </div>
+
+  <button mat-icon-button class="fundoo32">
+    <img src="../../assets/image/baseline-apps-24px.svg" />
+  </button>
+  <button mat-icon-button class="fundoo33">
+    <img src="../../assets/image/baseline-notifications-24px.svg" />
+  </button>
+
+ 
+    <button mat-icon-button class="signout" style="background-color:rgb(236, 64, 122)" [matMenuTriggerFor]="Signout">
+      <div style="margin-top: -4px;">{{symbol}}</div>
+    </button>
+  
+
+    <mat-menu #Signout="matMenu" class="profile">
+      <button mat-fab class="signoutlogo" style="background-color:rgb(236, 64, 122)">
+       <div style="margin-top: -7px;"> {{symbol}}</div>
+      </button>
+      <div class="SignoutEmail">{{Email}}</div>
+      <div class="SignoutName">{{name}}</div>
+      
+
+      <mat-divider style="margin-top:56px;"></mat-divider>
+      <div class="Add-sign-out" style="display:flex;">
+        <button mat-stroked-button>Add Account</button>
+        <button mat-stroked-button (click)="signOut()">Sign out</button>
+      </div>
+    </mat-menu>
+
+</mat-toolbar><br><br><br>
+
+<mat-sidenav-container class="example-sidenav-container">
+  <mat-sidenav #snav mode="side" opened class="example-sidenav" style="width:260px">
+    <mat-nav-list>
+      
+      <button mat-button class="sidebutton" style="margin-top:-10px" [routerLinkActive]="['active']" (click)="Fundoonotes()">
+        <a [routerLink]="['/fundoo/notes']">
+          <div class="imageopac">
+            <img src="../../assets/image/notes.svg" />
+          </div>
+          <div class="button-r">Notes</div>
+        </a>
+      </button>
+
+      <button mat-button class="sidebutton" [routerLinkActive]="['active']" (click)="Remainder()">
+        <a [routerLink]="['/fundoo/remainders']">
+          <div class="imageopac">
+            <img src="../../assets/image/Remainder.svg" />
+          </div>
+          <div class="button-r" style="margin-left:-31px;">Reminders</div>
+        </a>
+      </button>
+
+      <mat-divider class="divider"></mat-divider>
+
+      <div class="imageset">
+        <p style="margin-top:25px;font-size:small">Labels<p>
+          <button mat-button class="editButton" (click)="OpenEdit()">EDIT</button>
+      </div>
+
+      <div *ngFor="let label of noteLabel">
+        <button mat-button class="sidebutton"  (click)="LabelRedirect(label)">
+          <div class="imageopac">
+            <img src="../../assets/image/baseline-label-24px.svg" />
+          </div>
+          <div class="button-r" style="margin-left:-57px">{{label.label}}</div>
+        </button>
+      </div>
+
+      <button mat-button class="sidebutton" style="margin-top: -5px;" (click)="OpenEdit()">
+        <div class="imageopac">
+          <img src="../../assets/image/baseline-add-24px.svg" />
+        </div>
+        <div class="button-r" style="margin-left:7px">Create new label</div>
+      </button>
+
+      <mat-divider class="divider"></mat-divider>
+
+      <button mat-button style="margin-top:13px" class="sidebutton" [routerLinkActive]="['active']" (click)="Archive()">
+        <a [routerLink]="['/fundoo/archive']">
+          <div>
+            <img src="../../assets/image/Archieve.svg" class="imageopac" />
+          </div>
+          <div class="button-r" style="margin-left: -48px;">Archive</div>
+        </a>
+      </button>
+
+      <!--<div class="imageset">
+            <a mat-list-item routerLink="/register" style="font-size:small">
+              <img src="../../assets/image/baseline-delete-24px.svg" />
+                <span>Trash</span>
+            </a>
+          </div>-->
+
+      <button mat-button class="sidebutton" (click)="Trash()">
+        <a [routerLink]="['/fundoo/trash']">
+          <img src="../../assets/image/baseline-delete-24px.svg" class="imageopac" />
+          <div class="button-r">Trash</div>
+        </a>
+      </button>
+
+      <mat-divider class="divider"></mat-divider>
+
+    </mat-nav-list>
+  </mat-sidenav> 
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

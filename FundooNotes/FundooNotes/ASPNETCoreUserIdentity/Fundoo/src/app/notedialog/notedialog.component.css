@@ -1,0 +1,102 @@
+.outerDiv {
+  padding: 0px;
+  margin: -24px;
+}
+
+.innerDiv{
+  margin-left:10px;
+}
+
+.label-Div {
+  background-color: #e6e6e6;
+  height: 20px;
+  margin-top: 3px;
+  width: 165px;
+  display: flex;
+}
+
+.LabelDisplay {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.fundoo-card1 {
+  width: 480px;
+  margin-top: 37px;
+  margin-left: 298px;
+  height: 115px;
+}
+.titleinput {
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 16px;
+}
+.pin {
+  margin-left: 203px;
+  opacity: 0.5;
+  color: #4285f4;
+  top: -28px;
+}
+.noteinput {
+  border: none;
+  outline: none;
+  width: 400px;
+  font-size: initial;
+}
+.remainder-Div {
+  background-color: #e6e6e6;
+  height: 25px;
+  margin-top: 0px;
+  width: 150px;
+  display: flex;
+}
+
+.remainder-Div-image {
+  width: 15px;
+  margin-top: 5px;
+  margin-left: 7px
+}
+.remainderTime {
+  font-size: 11px;
+  margin-top: 6px;
+}
+.button-display {
+  display: flex;
+  margin-left: -15px;
+  margin-right: 10px;
+}
+.fundoo33 {
+  margin-left: 0px;
+  opacity: 0.5;
+}
+.closebtn {
+  margin-left: 96px;
+}
+.notesImage {
+  width: 100%;
+  height: 100%;
+}
+
+.colorCard {
+  left: 331px;
+  margin-top: -692px;
+  width: 144px;
+  padding: 3px;
+}
+
+.colorPalette {
+  border-radius: 100%;
+  outline: none;
+  border: none;
+  width: 0px;
+  height: 30px;
+}
+.colorDiv {
+  margin-bottom: 5px;
+  display: flex;
+}
+.fileLoader {
+  display: none;
+}

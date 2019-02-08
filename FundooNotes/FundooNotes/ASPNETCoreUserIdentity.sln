@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCoreUserIdentity", "ASPNETCoreUserIdentity\ASPNETCoreUserIdentity.csproj", "{878C05CE-57C4-4C49-8ADE-F47CD7D9EABC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundoo_BL", "Fundoo_BL\Fundoo_BL.csproj", "{26136366-06E5-48B2-8587-8BEB804885B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundoo_Datas", "Fundoo_Datas\Fundoo_Datas.csproj", "{AB755D61-DFF0-4F06-9429-1B06B1725BBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{878C05CE-57C4-4C49-8ADE-F47CD7D9EABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878C05CE-57C4-4C49-8ADE-F47CD7D9EABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878C05CE-57C4-4C49-8ADE-F47CD7D9EABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{878C05CE-57C4-4C49-8ADE-F47CD7D9EABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26136366-06E5-48B2-8587-8BEB804885B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26136366-06E5-48B2-8587-8BEB804885B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26136366-06E5-48B2-8587-8BEB804885B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26136366-06E5-48B2-8587-8BEB804885B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB755D61-DFF0-4F06-9429-1B06B1725BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB755D61-DFF0-4F06-9429-1B06B1725BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB755D61-DFF0-4F06-9429-1B06B1725BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB755D61-DFF0-4F06-9429-1B06B1725BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACF0D08A-838B-4006-9C86-2EE50AA4A4CF}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://selvishanmugam.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj
+		SccProjectName1 = ASPNETCoreUserIdentity
+		SccLocalPath1 = ASPNETCoreUserIdentity
+		SccProjectUniqueName2 = Fundoo_BL\\Fundoo_BL.csproj
+		SccProjectName2 = Fundoo_BL
+		SccLocalPath2 = Fundoo_BL
+		SccProjectUniqueName3 = Fundoo_Datas\\Fundoo_Datas.csproj
+		SccProjectName3 = Fundoo_Datas
+		SccLocalPath3 = Fundoo_Datas
+	EndGlobalSection
+EndGlobal

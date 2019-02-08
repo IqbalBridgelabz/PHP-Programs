@@ -1,0 +1,164 @@
+.colour {
+  background-color: #ffbb00;
+}
+
+.example-sidenav-content {
+  opacity: 0.5;
+  display: flex;
+}
+
+.Fundoo2 {
+  margin-bottom: 5px;
+  margin-left: 40px;
+}
+
+.searchbar {
+  margin-left: 40px;
+  width: 700px;
+  border-radius: 5px;
+  font-size: 20px;
+  display: flex;
+}
+
+.search {
+  margin-left: 10px;
+  width: 250%;
+  font-size: 16px;
+  padding: 7px 20px 10px 5px;
+  border: none;
+  outline: none;
+}
+
+.fundoo3 {
+  margin-left: 101px;
+}
+
+.fundoo31 {
+  margin-left: 5px;
+  opacity: 0.5;
+}
+
+.fundoo32 {
+  margin-left: 50px;
+  opacity: 0.5;
+}
+
+.fundoo33 {
+  margin-left: 10px;
+  opacity: 0.5;
+}
+
+.example-sidenav {
+  background-color: #e8e8e8;
+  padding: 20px;
+  width: 300px;
+}
+
+.example-sidenav-container {
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.sidebutton {
+  left: -12px;
+  width: 243px;
+  height: 55px;
+  margin-left: -8px;
+}
+
+.imageopac {
+  opacity: 0.5;
+  margin-left: -188px;
+}
+
+.button-r {
+  margin-top: -45px;
+  margin-left: -61px;
+  font-weight: normal;
+}
+
+.divider {
+  margin: 10px -19px -6px -17px;
+}
+
+.imageset {
+  display: flex;
+}
+
+.editButton {
+  margin-left: 100px;
+  font-size: small;
+}
+
+.signout {
+  width: 37px;
+  height: 36px;
+  border-radius: 100%;
+  font-size: 23px;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+.colorDiv {
+  margin-bottom: 5px;
+  display: flex;
+  margin-left: 15px;
+}
+
+.signoutlogo {
+  outline: none;
+  border: none;
+  height: 57px;
+  width: 57px;
+  margin-left: 14px;
+  margin-top: 10px;
+  margin-bottom: 23px;
+  border-radius: 100%;
+  font-size: 45px;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+.signoutDiv {
+  display:flex;
+  margin-top: 26px;
+  margin-right: 25px;
+  margin-left: 22px;
+}
+
+.SignoutEmail {
+  font-size: 13px;
+  margin-top: -48px;
+  margin-left: 78px;
+  opacity: 0.8;
+}
+
+.Add-sign-out button,
+.Add-sign-out a {
+  margin-right: 8px;
+  opacity: 0.5;
+  height: 30px;
+  margin-top: 12px;
+  background-color: lightgrey;
+  right: 49px;
+}
+
+.Add-sign-out:last-child {
+  margin-left: 58px;
+  margin-right: 0;
+}
+
+.SignoutName {
+  margin-top: -36px;
+  margin-left: 78px;
+}
+.profile{
+  position:absolute;
+  z-index:1000;
+  display:flex;
+}

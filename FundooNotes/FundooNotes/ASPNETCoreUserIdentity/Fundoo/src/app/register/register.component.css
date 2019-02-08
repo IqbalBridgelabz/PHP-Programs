@@ -1,0 +1,51 @@
+.register-card {
+  max-width: 485px;
+  margin: auto;
+}
+
+.button-row {
+  display: flex;
+}
+
+.button-row1 {
+  flex: 1;
+  margin-right: 30px;
+}
+
+.button-row1:last-child {
+    margin-right: 0;
+  }
+
+#exflex {
+  display: flex;
+}
+
+#exflex1 {
+  flex: 1;
+  margin-right: 40px;
+}
+
+  #exflex1:last-child {
+    margin-right: 0;
+  }
+
+.personal-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#mobright {
+  align-content: flex-end
+}
+
+#f1 {
+  margin-top: auto;
+}
+
+#txtclr {
+  color: red;
+}
+.credential {
+  margin-top: -50px;
+  color: red;
+}

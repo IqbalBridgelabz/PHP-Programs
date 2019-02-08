@@ -1,0 +1,75 @@
+<mat-sidenav-container class="example-sidenav-container">
+  <mat-sidenav-content class="example">
+
+    <!--to display the notes that are trashed-->
+    <div class="notesDisplay">
+      <div *ngFor="let note of notes">
+        <mat-card class="cardDisplay" *ngIf="note.isTrash==1" [style.background-color]="note.colorCode">
+          <div *ngIf="note.imageUrl!=null">
+            <img src="{{note.imageUrl}}" class="notesImage" />
+          </div>
+          <div>
+            <mat-card-title class="title-pin" style="width:75%">
+              {{note.title}}
+            </mat-card-title>
+          </div>
+          <mat-card-content>{{note.content}}</mat-card-content>
+
+          <div style="display:flex">
+            <div class="remainder-Div" *ngIf=" note.reminder!=null">
+              <div><img class="remainder-Div-image" src="../../assets/image/outline-watch_later-24px.svg" /></div>
+              <div class="remainderTime">{{note.reminder}}</div>
+              <div (click)="ClearRemainder(note)">
+                <img class="remainder-Div-image" src="../../assets/image/baseline-clear-24px.svg" />
+              </div>
+            </div>
+            <div *ngIf="note.email!=Email">
+              <button mat-icon-button class="signout" style="background-color:rgb(69, 90, 100)" (click)="collaboratorDialog(note)">
+                <div class="collaborator">
+                  {{note.email}}
+                </div>
+              </button>
+            </div>
+            <div *ngFor="let shareid of collaborator">
+              <div *ngIf="shareid.noteId==note.id">
+                <button mat-icon-button class="signout" style="background-color:rgb(69, 90, 100)" (click)="collaboratorDialog(note)">
+                  <div class="collaborator">
+                    {{shareid.sharedId}}
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div *ngFor="let label of notesLabel">
+            <div class="label-Div" *ngIf="label.noteId==note.id" matTooltip="Remove Label">
+              <div *ngFor="let lbl of labels">
+                <div *ngIf="lbl.id==label.lableId" style="display:flex">
+                  <div class="LabelDisplay">{{lbl.label}}</div>
+                  <div (click)="ClearLabel(note)">
+                    <img class="remainder-Div-image" src="../../assets/image/baseline-clear-24px.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <mat-card-actions class="button-display">
+            <button mat-icon-button class="notes" matTooltip="More" [matMenuTriggerFor]="Mainmenu" (click)="MoreIcon(note)">
+              <img class="imageNote" src="../../assets/image/baseline-more_vert-24px.svg" />
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+
+    <mat-menu #Mainmenu="matMenu">
+      <button mat-menu-item (click)="DeleteForever()">Delete forever</button>
+      <button mat-menu-item (click)="RestoreNote()">Restore</button>
+    </mat-menu>
+
+    
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

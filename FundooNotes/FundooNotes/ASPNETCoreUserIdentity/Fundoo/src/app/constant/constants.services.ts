@@ -1,0 +1,23 @@
+export const servicesusrls = {
+  host: "https://localhost:44387/",
+  register:'api/Account/Register',
+  forgotpass: 'api/Account/ForgotPassword',
+  login: 'api/Account/Login',
+  resetpass: 'api/Account/ResetPassword',
+  notes: 'api/Notes/GetNotes',
+  notesById: 'api/Notes/GetNotesById',
+  updateNotes: 'api/Notes/UpdateNotes',
+  deleteNotes: 'api/Notes/DeleteNotes',
+  labelNotes: 'api/Notes/AddLabel',
+  getLabelNotes: 'api/Notes/GetLabel',
+  updateLabel: 'api/Notes/UpdateLabel',
+  deleteLabel: 'api/Notes/DeleteLabel',
+  addImage: 'api/Notes/AddImage',
+  shareCollaborator: 'api/Notes/ShareCollaborator',
+  addNotesLabel: 'api/Notes/AddNotesLabel',
+  getNotesLabel: 'api/Notes/GetNotesLabel',
+  deleteNotesLabel: 'api/Notes/DeleteNotesLabel',
+  getNotesCollaborator: 'api/Notes/GetNotesCollaborator',
+  addNotesCollaborator: 'api/Notes/AddNotesCollaborator',
+  deleteNotesCollaborator:'api/Notes/DeleteNotesCollaborator'
+};

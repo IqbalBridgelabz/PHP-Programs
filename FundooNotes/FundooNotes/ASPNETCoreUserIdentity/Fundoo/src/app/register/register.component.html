@@ -1,0 +1,155 @@
+<mat-toolbar color="primary">
+  <span>Fundoo Notes</span>
+</mat-toolbar><br><br><br>
+
+<div>
+  <mat-card class="register-card">
+    <mat-card-title align="center">
+      REGISTER
+    </mat-card-title>
+    <form>
+      <mat-tab-group [selectedIndex]="selectedIndex">
+        <mat-tab label="PERSONNAL">
+          <br>
+          <div class="personal-container">
+            <mat-form-field>
+              <input matInput placeholder="First Name" required [formControl]="fnameFormControl" [(ngModel)]="model.fname">
+              <mat-error *ngIf="fnameFormControl.hasError('required')">
+                firstname is required
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Last Name" required [formControl]="lnameFormControl" [(ngModel)]="model.lname">
+              <mat-error *ngIf="lnameFormControl.hasError('required')">
+                lastname is required
+              </mat-error>
+            </mat-form-field>
+            <div id="exflex">
+            <mat-form-field id="exflex1">
+                <mat-select placeholder="Gender" required [formControl]="genderFormControl" [(ngModel)]="model.gender1">
+                  <mat-option *ngFor="let pow of gender" [value]="pow">{{pow.value}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="lnameFormControl.hasError('required')">
+                  gender is required
+                </mat-error>
+            </mat-form-field>
+            </div>
+            <mat-form-field hintlabel="####-####-####" textcolor="black">
+              <input matInput maxlength="14" placeholder="Aadhar Number" required [formControl]="aadharFormControl" [(ngModel)]="model.aadhar">
+              <mat-error *ngIf="aadharFormControl.hasError('required')">
+                aadhar number is required
+              </mat-error>
+              <mat-error *ngIf="aadharFormControl.hasError('pattern')">
+                aadhar number pattern is required
+              </mat-error>
+            </mat-form-field>
+            <div id="exflex">
+              <mat-form-field id="exflex1">
+                <mat-select placeholder="Country Code" required>
+                  <mat-option *ngFor="let pow of postal " [value]="pow">{{pow.Code}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field id="exflex1">
+                <input matInput placeholder="Phone Number" required [formControl]="phoneFormControl" [(ngModel)]="model.phone">
+                <mat-error *ngIf="phoneFormControl.hasError('required')">
+                  phone number is required
+                </mat-error>
+                <mat-error *ngIf="phoneFormControl.hasError('pattern')">
+                  phone number is invalid
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <br>
+            <br>
+            <button mat-raised-button color="primary" (click)="selectTab(1)">Next</button>
+          </div>
+        </mat-tab>
+
+
+        <mat-tab label="ADDRESS">
+          <br>
+          <div class="personal-container">
+            <mat-form-field>
+              <input matInput placeholder="Address" [formControl]="addressFormControl" [(ngModel)]="model.address" />
+              <mat-error *ngIf="addressFormControl.hasError('required')">
+                address is required
+              </mat-error>
+              <mat-error *ngIf="addressFormControl.hasError('maxlength')">
+                address is exceeding
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="line 2">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-select placeholder="State" required [formControl]="stateFormControl" [(ngModel)]="model.state1">
+                <mat-option *ngFor="let pow of state" [value]="pow">{{pow.name}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="stateFormControl.hasError('required')">
+                state is required
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="City" [formControl]="cityFormControl" [(ngModel)]="model.city" />
+              <mat-error *ngIf="cityFormControl.hasError('required')">
+                city is required
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Postal Code" [formControl]="zipFormControl" [(ngModel)]="model.zip" />
+              <mat-error *ngIf="zipFormControl.hasError('required')">
+                zip code is required
+              </mat-error>
+              <mat-error *ngIf="zipFormControl.hasError('pattern')">
+                zip pattern is required
+              </mat-error>
+            </mat-form-field>
+            <div class="button-row">
+              <br><br>
+              <button mat-raised-button class="button-row1" (click)="selectTab(0)">Back</button>
+              <button mat-raised-button color="primary" class="button-row1" (click)="selectTab(2)" >Next</button>
+            </div>
+          </div>
+        </mat-tab>
+
+
+        <mat-tab label="SECURITY">
+          <br>
+          <div class="personal-container">
+            <mat-form-field>
+              <input matInput placeholder="Email Id" [formControl]="userFormControl" [(ngModel)]="model.email">
+              <mat-error *ngIf="userFormControl.hasError('required')">
+                User Name is required
+              </mat-error>
+              <mat-error *ngIf="userFormControl.hasError('pattern')">
+                User Name is invalid
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="password" ng-model="password1" name="password1" placeholder="Password" [formControl]="passFormControl" [(ngModel)]="model.password">
+              <mat-error *ngIf="passFormControl.hasError('required')">
+                Password is required
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Confirm Password" required [formControl]="confmFormControl" [(ngModel)]="model.cpassword" >
+              <mat-error *ngIf="confmFormControl.hasError('required')">
+                Confirm Password is required
+              </mat-error>
+            </mat-form-field>
+            <div *ngIf="showError" class="credential">
+              Entered credential is incorrect
+            </div>
+          </div>
+          <br><br><br>
+          <div class="button-row">
+            <br><br>
+            <button mat-raised-button class="button-row1" (click)="selectTab(1)">Back</button>
+            <button mat-raised-button color="primary" class="button-row1" type="submit" (click)="onSubmit()">Register</button>
+          </div>
+        </mat-tab>
+
+      </mat-tab-group>
+    </form>
+  </mat-card>
+</div>

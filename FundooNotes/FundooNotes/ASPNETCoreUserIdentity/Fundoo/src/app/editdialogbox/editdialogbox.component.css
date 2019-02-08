@@ -1,0 +1,32 @@
+.fundoo31 {
+  opacity: 0.5;
+}
+
+.Label{
+  outline:none;
+  border:none;
+}
+
+.divider {
+  margin-left: 35px;
+  width: 181px;
+}
+
+.Done {
+  left: 170px;
+}
+
+.LabelList {
+  margin-left: 45px;
+  margin-top: 20px;
+  width:80%;
+}
+
+.Label{
+  display:flex;
+}
+
+.inputField{
+  border:none;
+  outline:none;
+}

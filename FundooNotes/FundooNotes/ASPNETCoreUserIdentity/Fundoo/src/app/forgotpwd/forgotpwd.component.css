@@ -1,0 +1,9 @@
+.forpass-card {
+  max-width: 400px;
+  margin: auto;
+}
+
+.forpass-container {
+  display: flex;
+  flex-direction: column;
+}

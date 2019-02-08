@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <span>Fundoo Notes</span>
+</mat-toolbar><br><br><br><br><br>
+<mat-card class="forpass-card">
+  <mat-card-title align="center">
+    Forgot Password ?
+  </mat-card-title>
+  <br>
+  <br>
+
+  <mat-card-content>
+    <div class="forpass-container">
+      <mat-form-field>
+        <input matInput placeholder="Email-id" required [formControl]="emailFormControl" [(ngModel)]="model.email">
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          User Name is required
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('pattern')">
+          User Name is invalid
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <br>
+
+      <button mat-raised-button color="primary" type="submit" (click)="onSubmit() " >Reset</button>
+      <br><br>
+    </div>
+  </mat-card-content>
+</mat-card>

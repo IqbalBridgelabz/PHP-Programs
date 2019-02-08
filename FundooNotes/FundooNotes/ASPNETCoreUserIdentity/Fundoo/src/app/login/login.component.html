@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+  <span>Fundoo Notes</span>
+</mat-toolbar><br><br><br>
+<mat-card class="login-card">
+  <mat-card-title align="center">
+    SIGN IN
+  </mat-card-title>
+  <br>
+ <mat-card-content>
+   <div class="login-container">
+     <mat-form-field>
+       <input matInput placeholder="User Name" required [formControl]="Emailform" [(ngModel)]="model.name">
+       <mat-error *ngIf="Emailform.hasError('pattern')">
+         User Name is invalid
+       </mat-error>
+       <mat-error *ngIf="Emailform.hasError('required')">
+         User Name is required
+       </mat-error>
+     </mat-form-field>
+     <mat-form-field>
+       <input matInput placeholder="Password" type="password" required [formControl]="Passwordform" [(ngModel)]="model.pass">
+       <mat-error *ngIf="Passwordform.hasError('required')">
+         PassWord is required
+       </mat-error>
+     </mat-form-field><br><br>
+     <div *ngIf="showError" class="credentialError">
+       Entered credential is incorrect
+     </div>
+
+     <div class="button-r">
+       <button mat-button class="button-r1" color="primary"><a class="dec" href="/forgotpwd">Forgot Password?</a></button>
+       <!--<button mat-button class="button-r1" color="primary">Send & VerifyOTP</button>-->
+     </div><br><br>
+     <div class="button-r">
+       <button mat-button class="button-r1" color="primary"><a class="dec" href="/register">Create Account</a></button>
+       <button mat-raised-button class="button-r1" color="primary" type="submit" (click)="OnSubmit()">Sign In</button>
+     </div>
+     <br><br>
+   </div>
+  </mat-card-content>
+</mat-card>

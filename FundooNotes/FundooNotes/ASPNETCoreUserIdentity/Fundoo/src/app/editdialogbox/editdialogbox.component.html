@@ -1,0 +1,44 @@
+<div>  
+    <h3 mat-dialog-title>Edit Labels</h3>
+
+    <mat-dialog-content>
+      <!--take the input from the user to create the label-->
+      <div class="Label">
+      <button mat-icon-button class="fundoo31" (click)="Clear()">
+        <img src="../../assets/image/baseline-clear-24px.svg" />
+      </button>
+      <input class="Label" placeholder="Create new label" [(ngModel)]="data.labelUpdate.label">
+      <button mat-icon-button class="fundoo31" [mat-dialog-close]="data.labelUpdate">
+        <img src="../../assets/image/baseline-done-24px.svg" />
+      </button>
+      </div>
+
+      <mat-divider class="divider"></mat-divider>
+      <div class="Label" *ngFor="let lbl of data.label">
+
+        <!--To show the created label and make changes to the created label and update them accordingly-->
+        <button mat-icon-button class="fundoo31" *ngIf="!editInput || LabelData.id!=lbl.id">
+          <img src="../../assets/image/baseline-label-24px.svg" />
+        </button>
+        <button mat-icon-button class="fundoo31" *ngIf="editInput && LabelData.id==lbl.id" (click)="DeleteData(lbl)">
+          <img src="../../assets/image/baseline-delete-24px.svg" />
+        </button>
+         
+        <input class="inputField" type="text" value="{{lbl.label}}" (click)="EditLabel(lbl)" (input)="onSearchChange($event.target.value)" />        
+
+        <button mat-icon-button class="fundoo31" *ngIf="!editInput || LabelData.id!=lbl.id" (click)="EditLabel(lbl)">
+          <img src="../../assets/image/baseline-create-24px.svg"/>
+        </button>
+        <button mat-icon-button class="fundoo31" *ngIf="editInput && LabelData.id==lbl.id" (click)="UpdateLabel(lbl)">
+          <img src="../../assets/image/baseline-done-24px.svg"/>
+        </button>
+      </div>
+    </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-button class="Done" [mat-dialog-close]="data.labelUpdate">
+    Done
+    </button>
+  </mat-dialog-actions>
+
+</div>
