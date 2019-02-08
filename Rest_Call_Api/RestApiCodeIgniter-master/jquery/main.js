@@ -1,5 +1,6 @@
 
 function loginvalidate() {
+    debugger;
     $('#regform').validate({
         rules: {
             email: {
